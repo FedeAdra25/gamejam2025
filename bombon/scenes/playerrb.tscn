@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://s0vp0761t0k8"]
+
+[ext_resource type="Script" path="res://scenes/playerrb.gd" id="1_1pbpr"]
+[ext_resource type="Texture2D" uid="uid://b1a6qv16r7h8v" path="res://sprites/hamster.png" id="2_e05y1"]
+[ext_resource type="Script" path="res://scenes/follow_player.gd" id="3_kca77"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0u4d3"]
+
+[node name="Player" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+unique_name_in_owner = true
+gravity_scale = 6.0
+linear_damp = 10.0
+script = ExtResource("1_1pbpr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(4.81507, 4.81507)
+shape = SubResource("CircleShape2D_0u4d3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_e05y1")
+script = ExtResource("3_kca77")

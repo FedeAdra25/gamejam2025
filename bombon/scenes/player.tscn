@@ -6,12 +6,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_w8w0r"]
 radius = 48.0104
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-position = Vector2(573, 273)
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_so77q")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_cqqkt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_w8w0r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cqqkt")

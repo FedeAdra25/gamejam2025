@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjs83ndn8f75j"]
+
+[ext_resource type="Texture2D" uid="uid://dd7tq6m08miyx" path="res://sprites/hamster_placeholdr.png" id="1_cqqkt"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_so77q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w8w0r"]
+radius = 48.0104
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(573, 273)
+script = ExtResource("1_so77q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cqqkt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_w8w0r")

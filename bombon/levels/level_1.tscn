@@ -1,14 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://d2a4lre3abj16"]
+[gd_scene load_steps=13 format=3 uid="uid://d2a4lre3abj16"]
 
 [ext_resource type="Texture2D" uid="uid://cb2vyn5j5wetd" path="res://sprites/placeholder_platform.png" id="1_40mpo"]
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="2_pcpng"]
-[ext_resource type="PackedScene" uid="uid://wep76gxyff2s" path="res://scenes/enemy.tscn" id="4_gfiwg"]
-[ext_resource type="PackedScene" uid="uid://575duwk8wwow" path="res://scenes/playerrb.tscn" id="4_vcoof"]
-[ext_resource type="PackedScene" uid="uid://dvy6ivrducy63" path="res://scenes/current.tscn" id="5_kqkir"]
-[ext_resource type="PackedScene" uid="uid://bd3l37avnu1at" path="res://scenes/jelly.tscn" id="6_r4e8e"]
-[ext_resource type="PackedScene" uid="uid://dt1aw6txf0sk3" path="res://scenes/surface.tscn" id="7_4i4m0"]
+[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="4_gfiwg"]
+[ext_resource type="PackedScene" path="res://scenes/playerrb.tscn" id="4_vcoof"]
+[ext_resource type="PackedScene" path="res://scenes/current.tscn" id="5_kqkir"]
+[ext_resource type="PackedScene" path="res://scenes/jelly.tscn" id="6_r4e8e"]
+[ext_resource type="PackedScene" path="res://scenes/surface.tscn" id="7_4i4m0"]
 [ext_resource type="Texture2D" uid="uid://ci2i83qulla2u" path="res://sprites/Background 0.3.jpg" id="8_40cbw"]
 [ext_resource type="Texture2D" uid="uid://bjj5myaluho47" path="res://sprites/pipe.png" id="9_knw8h"]
+[ext_resource type="PackedScene" uid="uid://crjgo7qvy4yej" path="res://scenes/sponge.tscn" id="10_wxtig"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
 
@@ -111,3 +112,7 @@ texture = ExtResource("9_knw8h")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="Sponge" parent="." instance=ExtResource("10_wxtig")]
+position = Vector2(1308, 1047)
+scale = Vector2(2.76413, 1.40011)

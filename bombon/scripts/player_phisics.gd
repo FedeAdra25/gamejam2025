@@ -50,3 +50,5 @@ func die() -> void:
 	
 func current() -> void:
 	isCurrent = !isCurrent
+func sponge_jump() -> void:
+	apply_central_impulse(Vector2(0,JUMP_VELOCITY * 25))

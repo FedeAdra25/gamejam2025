@@ -1,15 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2a4lre3abj16"]
+[gd_scene load_steps=14 format=3 uid="uid://d2a4lre3abj16"]
 
 [ext_resource type="Texture2D" uid="uid://cb2vyn5j5wetd" path="res://sprites/placeholder_platform.png" id="1_40mpo"]
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="2_pcpng"]
-[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="4_gfiwg"]
-[ext_resource type="PackedScene" path="res://scenes/playerrb.tscn" id="4_vcoof"]
-[ext_resource type="PackedScene" path="res://scenes/current.tscn" id="5_kqkir"]
-[ext_resource type="PackedScene" path="res://scenes/jelly.tscn" id="6_r4e8e"]
-[ext_resource type="PackedScene" path="res://scenes/surface.tscn" id="7_4i4m0"]
+[ext_resource type="PackedScene" uid="uid://wep76gxyff2s" path="res://scenes/enemy.tscn" id="4_gfiwg"]
+[ext_resource type="PackedScene" uid="uid://575duwk8wwow" path="res://scenes/playerrb.tscn" id="4_vcoof"]
+[ext_resource type="PackedScene" uid="uid://dvy6ivrducy63" path="res://scenes/current.tscn" id="5_kqkir"]
+[ext_resource type="PackedScene" uid="uid://bd3l37avnu1at" path="res://scenes/jelly.tscn" id="6_r4e8e"]
+[ext_resource type="PackedScene" uid="uid://dt1aw6txf0sk3" path="res://scenes/surface.tscn" id="7_4i4m0"]
 [ext_resource type="Texture2D" uid="uid://ci2i83qulla2u" path="res://sprites/Background 0.3.jpg" id="8_40cbw"]
 [ext_resource type="Texture2D" uid="uid://bjj5myaluho47" path="res://sprites/pipe.png" id="9_knw8h"]
-[ext_resource type="PackedScene" uid="uid://crjgo7qvy4yej" path="res://scenes/sponge.tscn" id="10_wxtig"]
+[ext_resource type="PackedScene" uid="uid://dvg0crd22tv4v" path="res://scenes/camera.tscn" id="10_nnac8"]
+[ext_resource type="PackedScene" uid="uid://b5em7oso028vc" path="res://scenes/sponge.tscn" id="10_wxtig"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
 
@@ -61,7 +62,7 @@ shape = SubResource("RectangleShape2D_pvqyf")
 texture = ExtResource("1_40mpo")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Floor"]
-position = Vector2(259, 171)
+position = Vector2(1223, 171)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D5"]
 position = Vector2(0.5, 0)
@@ -74,6 +75,7 @@ texture = ExtResource("1_40mpo")
 script = ExtResource("2_pcpng")
 
 [node name="Player" parent="." instance=ExtResource("4_vcoof")]
+unique_name_in_owner = true
 position = Vector2(170, 129)
 
 [node name="Enemy" parent="." instance=ExtResource("4_gfiwg")]
@@ -105,14 +107,13 @@ scale = Vector2(0.556, 0.556)
 texture = ExtResource("9_knw8h")
 
 [node name="Pipe2" type="Sprite2D" parent="Scenario/Props"]
-position = Vector2(2321, 995)
+position = Vector2(2346, 995)
 rotation = 3.14159
 scale = Vector2(0.556, 0.556)
 texture = ExtResource("9_knw8h")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
+[node name="Camera2D" parent="." instance=ExtResource("10_nnac8")]
+position = Vector2(0, -1)
 
 [node name="Sponge" parent="." instance=ExtResource("10_wxtig")]
-position = Vector2(1308, 1047)
-scale = Vector2(2.76413, 1.40011)
+position = Vector2(1470, 994)

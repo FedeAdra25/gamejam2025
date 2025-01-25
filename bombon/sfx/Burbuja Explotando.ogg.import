@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://chd0iscof51x3"
+path="res://.godot/imported/Burbuja Explotando.ogg-b9f3f1cf0b478c2d52b7ff720d20e34b.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/Burbuja Explotando.ogg"
+dest_files=["res://.godot/imported/Burbuja Explotando.ogg-b9f3f1cf0b478c2d52b7ff720d20e34b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

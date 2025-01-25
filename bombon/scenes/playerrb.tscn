@@ -1,23 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://s0vp0761t0k8"]
+[gd_scene load_steps=7 format=3 uid="uid://575duwk8wwow"]
 
-[ext_resource type="Script" path="res://scenes/playerrb.gd" id="1_1pbpr"]
-[ext_resource type="Texture2D" uid="uid://b1a6qv16r7h8v" path="res://sprites/hamster.png" id="2_e05y1"]
-[ext_resource type="Script" path="res://scenes/follow_player.gd" id="3_kca77"]
+[ext_resource type="Script" path="res://scripts/player_phisics.gd" id="1_fp43i"]
+[ext_resource type="AudioStream" uid="uid://df6cfmdsdgeht" path="res://sfx/Burbuja Explotando 3.ogg" id="2_802le"]
+[ext_resource type="Script" path="res://scripts/sprite_follow_player.gd" id="3_0ttpv"]
+[ext_resource type="AudioStream" uid="uid://dxlr2o0ic2vlg" path="res://sfx/Burbuja Salto 2.ogg" id="3_6n3w5"]
+[ext_resource type="Texture2D" uid="uid://bxj465fnmb5n" path="res://sprites/hamster 96.png" id="4_i5pe1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0u4d3"]
 
 [node name="Player" type="Node2D"]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="PlayerPhysics" type="RigidBody2D" parent="." groups=["player"]]
 unique_name_in_owner = true
 gravity_scale = 6.0
 linear_damp = 10.0
-script = ExtResource("1_1pbpr")
+script = ExtResource("1_fp43i")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerPhysics"]
 scale = Vector2(4.81507, 4.81507)
 shape = SubResource("CircleShape2D_0u4d3")
 
+[node name="PlayerSfx" type="Node" parent="PlayerPhysics"]
+
+[node name="PlayerDying" type="AudioStreamPlayer" parent="PlayerPhysics/PlayerSfx"]
+stream = ExtResource("2_802le")
+
+[node name="PlayerJumping" type="AudioStreamPlayer2D" parent="PlayerPhysics/PlayerSfx"]
+stream = ExtResource("3_6n3w5")
+volume_db = 12.683
+max_polyphony = 3
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_e05y1")
-script = ExtResource("3_kca77")
+scale = Vector2(0.73913, 0.73913)
+texture = ExtResource("4_i5pe1")
+script = ExtResource("3_0ttpv")
+
+[connection signal="body_exited" from="PlayerPhysics" to="PlayerPhysics" method="_on_body_exited"]

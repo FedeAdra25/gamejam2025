@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cx2ja3r7qwb77"
+path="res://.godot/imported/Burbuja Salto.ogg-380b0d6868eceba7b609115f2f7019df.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/Burbuja Salto.ogg"
+dest_files=["res://.godot/imported/Burbuja Salto.ogg-380b0d6868eceba7b609115f2f7019df.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

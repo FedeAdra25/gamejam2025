@@ -1,11 +1,12 @@
 extends Sprite2D
 
+var playerPhysics
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	playerPhysics = %PlayerPhysics
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	global_position = %RigidBody2D.global_position
+	global_position = playerPhysics.global_position

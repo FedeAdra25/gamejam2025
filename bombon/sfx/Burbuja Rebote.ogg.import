@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://de1j4uw3p2m2y"
+path="res://.godot/imported/Burbuja Rebote.ogg-a4f9ac93386111e7f9f0b534be3c565f.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/Burbuja Rebote.ogg"
+dest_files=["res://.godot/imported/Burbuja Rebote.ogg-a4f9ac93386111e7f9f0b534be3c565f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

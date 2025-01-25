@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvy6ivrducy63"]
+
+[ext_resource type="Script" path="res://scripts/current.gd" id="1_hl3qv"]
+[ext_resource type="Texture2D" uid="uid://ckbwehd1arqx" path="res://sprites/bubble.png" id="2_avsej"]
+[ext_resource type="Script" path="res://scripts/particles_script.gd" id="2_sbb25"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0r2eg"]
+size = Vector2(98, 769)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_iqsck"]
+lifetime_randomness = 0.4
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 1, 1)
+gravity = Vector3(0, -200, 0)
+scale_min = 0.1
+scale_max = 0.4
+turbulence_noise_strength = 3.0
+turbulence_noise_speed_random = 0.5
+turbulence_influence_max = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2e1fb"]
+size = Vector2(634, 784)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_hl3qv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0r2eg")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_sbb25")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Area2D"]
+position = Vector2(0, 459)
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_iqsck")
+texture = ExtResource("2_avsej")
+lifetime = 5.0
+speed_scale = 5.0
+visibility_rect = Rect2(-100, 0, 200, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_2e1fb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd3l37avnu1at"]
+
+[ext_resource type="Script" path="res://scripts/jelly.gd" id="1_kcrsi"]
+[ext_resource type="Texture2D" uid="uid://do5mhay3ql2xr" path="res://sprites/jellyfish.png" id="2_r2uy2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g42iw"]
+radius = 134.0
+height = 282.0
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_kcrsi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_r2uy2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 2)
+shape = SubResource("CapsuleShape2D_g42iw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

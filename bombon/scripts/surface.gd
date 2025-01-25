@@ -1,13 +1,14 @@
 extends Area2D
 
-const SPEED = 100
-var currentDirection = 1
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	global_position += Vector2(currentDirection * SPEED * delta,0)
-	
-
+	pass
 
 func _on_body_entered(body: Node2D) -> void:
 	if(body.has_method("die")):

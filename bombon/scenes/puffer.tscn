@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://cp42db40rw2sv"]
+
+[ext_resource type="Script" path="res://scenes/puffer.gd" id="1_3snr1"]
+[ext_resource type="Texture2D" uid="uid://b1elx88tw3r2y" path="res://sprites/puffer_s.png" id="1_ryega"]
+[ext_resource type="Texture2D" uid="uid://p6vr1f2lbpk" path="res://sprites/puffer_l.png" id="3_nodqs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4g1d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ryega")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nodqs")
+}],
+"loop": true,
+"name": &"large",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4qsh6"]
+radius = 15.0887
+height = 36.2744
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1tfo"]
+radius = 31.9988
+height = 90.0314
+
+[node name="puffer" type="Area2D"]
+script = ExtResource("1_3snr1")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_i4g1d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -3)
+scale = Vector2(2.51845, -1.10271)
+shape = SubResource("CapsuleShape2D_4qsh6")
+disabled = true
+
+[node name="coliisionlarge" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+rotation = -1.57949
+shape = SubResource("CapsuleShape2D_s1tfo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -239,7 +239,7 @@ visibility_rect = Rect2(0, 0, 3000, 200)
 position = Vector2(184, 1017)
 
 [node name="Sponge" parent="." instance=ExtResource("8_jo6lq")]
-position = Vector2(1559, 594)
+position = Vector2(1609, 594)
 rotation = -0.0544933
 scale = Vector2(0.931402, 0.632343)
 

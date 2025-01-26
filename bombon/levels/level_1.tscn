@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d2a4lre3abj16"]
+[gd_scene load_steps=18 format=3 uid="uid://d2a4lre3abj16"]
 
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="2_pcpng"]
 [ext_resource type="PackedScene" path="res://scenes/playerrb.tscn" id="4_vcoof"]
@@ -8,21 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://ci2i83qulla2u" path="res://sprites/Background 0.3.jpg" id="8_40cbw"]
 [ext_resource type="Texture2D" uid="uid://bjj5myaluho47" path="res://sprites/pipe.png" id="9_knw8h"]
 [ext_resource type="Texture2D" uid="uid://ckbwehd1arqx" path="res://sprites/bubble.png" id="9_oiftd"]
-<<<<<<< Updated upstream
-[ext_resource type="PackedScene" uid="uid://dvg0crd22tv4v" path="res://scenes/camera.tscn" id="10_nnac8"]
-[ext_resource type="PackedScene" uid="uid://b5em7oso028vc" path="res://scenes/sponge.tscn" id="10_wxtig"]
-[ext_resource type="PackedScene" uid="uid://cmdbh32ttv8vx" path="res://scenes/shark.tscn" id="11_8yxr3"]
-[ext_resource type="PackedScene" uid="uid://6bp3h8a7xwg2" path="res://scenes/hooks.tscn" id="12_prfvy"]
-[ext_resource type="PackedScene" uid="uid://bd2t10pe6o5ja" path="res://scenes/spikes.tscn" id="13_qrmwc"]
-[ext_resource type="PackedScene" uid="uid://b6mayorbuqksf" path="res://scenes/platform.tscn" id="13_yaf3g"]
-=======
 [ext_resource type="PackedScene" path="res://scenes/camera.tscn" id="10_nnac8"]
 [ext_resource type="PackedScene" uid="uid://crjgo7qvy4yej" path="res://scenes/sponge.tscn" id="10_wxtig"]
 [ext_resource type="PackedScene" path="res://scenes/shark.tscn" id="11_8yxr3"]
 [ext_resource type="PackedScene" path="res://scenes/hooks.tscn" id="12_prfvy"]
 [ext_resource type="PackedScene" path="res://scenes/spikes.tscn" id="13_qrmwc"]
+[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="13_yaf3g"]
 [ext_resource type="PackedScene" uid="uid://cp42db40rw2sv" path="res://scenes/puffer.tscn" id="14_rgo8v"]
->>>>>>> Stashed changes
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
 
@@ -138,13 +130,8 @@ scale = Vector2(0.538387, 0.35535)
 SPEED = 500.0
 DELAY = 1.0
 
-<<<<<<< Updated upstream
 [node name="Area2D" parent="." instance=ExtResource("13_qrmwc")]
 position = Vector2(1795, 937)
-=======
-[node name="Spikes" parent="." instance=ExtResource("13_qrmwc")]
-position = Vector2(1793, 937)
->>>>>>> Stashed changes
 
 [node name="puffer" parent="." instance=ExtResource("14_rgo8v")]
 position = Vector2(1404, 500)

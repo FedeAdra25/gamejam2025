@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d2a4lre3abj16"]
+[gd_scene load_steps=16 format=3 uid="uid://d2a4lre3abj16"]
 
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="2_pcpng"]
 [ext_resource type="PackedScene" uid="uid://575duwk8wwow" path="res://scenes/playerrb.tscn" id="4_vcoof"]
@@ -11,7 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://dvg0crd22tv4v" path="res://scenes/camera.tscn" id="10_nnac8"]
 [ext_resource type="PackedScene" uid="uid://b5em7oso028vc" path="res://scenes/sponge.tscn" id="10_wxtig"]
 [ext_resource type="PackedScene" uid="uid://cmdbh32ttv8vx" path="res://scenes/shark.tscn" id="11_8yxr3"]
-[ext_resource type="PackedScene" path="res://scenes/hooks.tscn" id="12_prfvy"]
+[ext_resource type="PackedScene" uid="uid://6bp3h8a7xwg2" path="res://scenes/hooks.tscn" id="12_prfvy"]
+[ext_resource type="PackedScene" uid="uid://bd2t10pe6o5ja" path="res://scenes/spikes.tscn" id="13_qrmwc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
 
@@ -122,5 +123,8 @@ position = Vector2(1624, -105)
 scale = Vector2(0.538387, 0.35535)
 SPEED = 500.0
 DELAY = 1.0
+
+[node name="Area2D" parent="." instance=ExtResource("13_qrmwc")]
+position = Vector2(1793, 937)
 
 [editable path="Player"]

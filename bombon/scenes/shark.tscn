@@ -3,15 +3,19 @@
 [ext_resource type="Script" path="res://scripts/shark.gd" id="1_1nkbq"]
 [ext_resource type="Texture2D" uid="uid://cdx7gl0o775rb" path="res://sprites/shark.png" id="1_lcsrn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jthj"]
-size = Vector2(550, 898)
+[sub_resource type="CircleShape2D" id="CircleShape2D_uxp4a"]
+radius = 130.0
 
 [node name="Shark" type="Area2D"]
 script = ExtResource("1_1nkbq")
 SPEED = 1000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_8jthj")
+z_index = 1
+position = Vector2(-29, -206)
+shape = SubResource("CircleShape2D_uxp4a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_lcsrn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

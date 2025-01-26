@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0uua0b04haf6"]
+
+[ext_resource type="Script" path="res://scripts/hooks.gd" id="1_0iwnt"]
+[ext_resource type="Texture2D" uid="uid://d30nnxuv4nw6" path="res://sprites/hook.png" id="2_v4eso"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1slou"]
+size = Vector2(112, 702)
+
+[node name="Hooks" type="Area2D"]
+script = ExtResource("1_0iwnt")
+SPEED = 400.0
+amountToMove = Vector2(0, 100)
+boomerang = true
+start_delay = 1.0
+DELAY = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1slou")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v4eso")

@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/sponge.gd" id="1_a33xt"]
 [ext_resource type="Texture2D" uid="uid://bpev42g1i06vh" path="res://sprites/sponge_template.png" id="2_gb0o0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x85li"]
-size = Vector2(168, 106)
+[sub_resource type="CircleShape2D" id="CircleShape2D_mt0jw"]
+radius = 70.0
 
 [node name="Sponge" type="Area2D"]
 script = ExtResource("1_a33xt")
@@ -13,7 +13,6 @@ script = ExtResource("1_a33xt")
 texture = ExtResource("2_gb0o0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 31)
-shape = SubResource("RectangleShape2D_x85li")
+shape = SubResource("CircleShape2D_mt0jw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

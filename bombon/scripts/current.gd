@@ -1,7 +1,7 @@
 extends Area2D
 
-@onready var particles = $GPUParticles2D
-var firstTime = 0
+@onready var bubbleSpawnSprite = $BubbleSpawn
+
 
 func modularizacionParaQueFedeSeaFeliz(body) -> void:
 	if(body.has_method("current")):

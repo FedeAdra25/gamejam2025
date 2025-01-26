@@ -45,11 +45,13 @@ func _process(delta: float) -> void:
 
 
 func die() -> void:
-	print("Moriste peteeeeeeeeeeeeeeeeeeeee")
 	playerDiesSfx.play()
+	get_tree().reload_current_scene()
 	
 func current() -> void:
 	isCurrent = !isCurrent
 
-func sponge_jump() -> void:
+func sponge_jump(sponge_position:Vector2) -> void:
+	var angle = get_angle_to(sponge_position)
+	print("Collided at ", angle, "degrees")
 	apply_central_impulse(Vector2(0,JUMP_VELOCITY * 25))

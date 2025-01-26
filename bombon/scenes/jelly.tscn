@@ -1,18 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd3l37avnu1at"]
+[gd_scene load_steps=6 format=3 uid="uid://bd3l37avnu1at"]
 
-[ext_resource type="Script" path="res://scripts/enemy_with_path.gd" id="1_kcrsi"]
-[ext_resource type="Texture2D" uid="uid://do5mhay3ql2xr" path="res://sprites/jellyfish.png" id="2_r2uy2"]
+[ext_resource type="Script" path="res://scripts/jelly.gd" id="1_rhvce"]
+[ext_resource type="Texture2D" uid="uid://c2c7stc0543bt" path="res://sprites/medusa1.png" id="3_0ccpg"]
+[ext_resource type="Texture2D" uid="uid://dhj5rcc2e0cbc" path="res://sprites/medusa2.png" id="4_svvng"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jstod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0ccpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_svvng")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g42iw"]
-radius = 134.0
-height = 282.0
+radius = 158.0
+height = 448.0
 
 [node name="Jelly" type="Area2D"]
-script = ExtResource("1_kcrsi")
+script = ExtResource("1_rhvce")
 amountToMove = Vector2(100, 100)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_r2uy2")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jstod")
+frame_progress = 0.620952
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_g42iw")

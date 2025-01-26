@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duvj5vdxxgd1u"
-path="res://.godot/imported/medusa 1.jpg-7a7c3264cbe6a7dce25408500e2ea595.ctex"
+uid="uid://bjwmvilp1dvmf"
+path="res://.godot/imported/bubble_spawn1.png-061117101f858acbbcb5783c9997fde9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/medusa 1.jpg"
-dest_files=["res://.godot/imported/medusa 1.jpg-7a7c3264cbe6a7dce25408500e2ea595.ctex"]
+source_file="res://sprites/bubble_spawn1.png"
+dest_files=["res://.godot/imported/bubble_spawn1.png-061117101f858acbbcb5783c9997fde9.ctex"]
 
 [params]
 

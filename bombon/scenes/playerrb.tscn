@@ -1,12 +1,90 @@
-[gd_scene load_steps=7 format=3 uid="uid://575duwk8wwow"]
+[gd_scene load_steps=17 format=3 uid="uid://575duwk8wwow"]
 
 [ext_resource type="Script" path="res://scripts/player_phisics.gd" id="1_fp43i"]
 [ext_resource type="AudioStream" uid="uid://df6cfmdsdgeht" path="res://sfx/Burbuja Explotando 3.ogg" id="2_802le"]
 [ext_resource type="Script" path="res://scripts/sprite_follow_player.gd" id="3_0ttpv"]
 [ext_resource type="AudioStream" uid="uid://dxlr2o0ic2vlg" path="res://sfx/Burbuja Salto 2.ogg" id="3_6n3w5"]
-[ext_resource type="Texture2D" uid="uid://bxj465fnmb5n" path="res://sprites/hamster 96.png" id="4_i5pe1"]
+[ext_resource type="Texture2D" uid="uid://bec4jdelqaeem" path="res://sprites/hamster_falling.png" id="4_lrvxn"]
+[ext_resource type="Texture2D" uid="uid://dboeba8hfc38q" path="res://sprites/hamster_going_up.png" id="5_d8ns0"]
+[ext_resource type="Texture2D" uid="uid://bxj465fnmb5n" path="res://sprites/hamster_idle.png" id="5_escle"]
+[ext_resource type="Texture2D" uid="uid://cnu4jjymkon2s" path="res://sprites/hamster_animation_run_spritesheet_resize.png" id="6_6jqc4"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0u4d3"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_m7yw4"]
+radius = 60.0333
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emt1n"]
+atlas = ExtResource("6_6jqc4")
+region = Rect2(0, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idio6"]
+atlas = ExtResource("6_6jqc4")
+region = Rect2(144, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpkak"]
+atlas = ExtResource("6_6jqc4")
+region = Rect2(288, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wsi5"]
+atlas = ExtResource("6_6jqc4")
+region = Rect2(0, 144, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o7ar"]
+atlas = ExtResource("6_6jqc4")
+region = Rect2(144, 144, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn0tq"]
+atlas = ExtResource("6_6jqc4")
+region = Rect2(288, 144, 144, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m4nii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lrvxn")
+}],
+"loop": false,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_escle")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_d8ns0")
+}],
+"loop": false,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emt1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idio6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpkak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wsi5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o7ar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn0tq")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
 
 [node name="Player" type="Node2D"]
 z_index = 10
@@ -18,8 +96,7 @@ linear_damp = 10.0
 script = ExtResource("1_fp43i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerPhysics"]
-scale = Vector2(4.81507, 4.81507)
-shape = SubResource("CircleShape2D_0u4d3")
+shape = SubResource("CircleShape2D_m7yw4")
 
 [node name="PlayerSfx" type="Node" parent="PlayerPhysics"]
 
@@ -28,14 +105,14 @@ stream = ExtResource("2_802le")
 
 [node name="PlayerJumping" type="AudioStreamPlayer2D" parent="PlayerPhysics/PlayerSfx"]
 stream = ExtResource("3_6n3w5")
-volume_db = 12.683
+volume_db = 10.0
 max_polyphony = 3
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerPhysics"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.73913, 0.73913)
-texture = ExtResource("4_i5pe1")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_m4nii")
+animation = &"idle"
 script = ExtResource("3_0ttpv")
 
 [connection signal="body_exited" from="PlayerPhysics" to="PlayerPhysics" method="_on_body_exited"]

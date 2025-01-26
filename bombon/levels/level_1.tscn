@@ -1,20 +1,22 @@
-[gd_scene load_steps=17 format=3 uid="uid://d2a4lre3abj16"]
+[gd_scene load_steps=19 format=3 uid="uid://d2a4lre3abj16"]
 
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="2_pcpng"]
-[ext_resource type="PackedScene" uid="uid://575duwk8wwow" path="res://scenes/playerrb.tscn" id="4_vcoof"]
+[ext_resource type="PackedScene" path="res://scenes/playerrb.tscn" id="4_vcoof"]
 [ext_resource type="PackedScene" path="res://scenes/bubble_generator.tscn" id="5_kqkir"]
-[ext_resource type="PackedScene" uid="uid://bd3l37avnu1at" path="res://scenes/jelly.tscn" id="6_r4e8e"]
+[ext_resource type="PackedScene" path="res://scenes/jelly.tscn" id="6_r4e8e"]
 [ext_resource type="PackedScene" uid="uid://dt1aw6txf0sk3" path="res://scenes/surface.tscn" id="7_4i4m0"]
 [ext_resource type="Texture2D" uid="uid://ci2i83qulla2u" path="res://sprites/Background 0.3.jpg" id="8_40cbw"]
 [ext_resource type="Texture2D" uid="uid://bjj5myaluho47" path="res://sprites/pipe.png" id="9_knw8h"]
-[ext_resource type="PackedScene" uid="uid://dvg0crd22tv4v" path="res://scenes/camera.tscn" id="10_nnac8"]
+[ext_resource type="PackedScene" path="res://scenes/camera.tscn" id="10_nnac8"]
+[ext_resource type="AudioStream" uid="uid://b7ednvv68iyd8" path="res://sfx/death.mp3" id="10_vp56d"]
 [ext_resource type="PackedScene" uid="uid://b5em7oso028vc" path="res://scenes/sponge.tscn" id="10_wxtig"]
-[ext_resource type="PackedScene" uid="uid://cmdbh32ttv8vx" path="res://scenes/shark.tscn" id="11_8yxr3"]
-[ext_resource type="PackedScene" uid="uid://6bp3h8a7xwg2" path="res://scenes/hooks.tscn" id="12_prfvy"]
-[ext_resource type="PackedScene" uid="uid://bd2t10pe6o5ja" path="res://scenes/spikes.tscn" id="13_qrmwc"]
+[ext_resource type="PackedScene" path="res://scenes/shark.tscn" id="11_8yxr3"]
+[ext_resource type="PackedScene" path="res://scenes/hooks.tscn" id="12_prfvy"]
+[ext_resource type="AudioStream" uid="uid://dko47xf7cgml2" path="res://sfx/Sonido de Muerte.ogg" id="13_ewi50"]
+[ext_resource type="PackedScene" path="res://scenes/spikes.tscn" id="13_qrmwc"]
 [ext_resource type="PackedScene" uid="uid://b6mayorbuqksf" path="res://scenes/platform.tscn" id="13_yaf3g"]
-[ext_resource type="PackedScene" uid="uid://cgtbdkncq2wat" path="res://scenes/pipe_end.tscn" id="14_c1ubq"]
-[ext_resource type="PackedScene" uid="uid://cjpbyobmve6kq" path="res://levels/1_level.tscn" id="15_t5lyc"]
+[ext_resource type="PackedScene" path="res://scenes/pipe_end.tscn" id="14_c1ubq"]
+[ext_resource type="PackedScene" path="res://levels/1_level.tscn" id="15_t5lyc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
 
@@ -79,11 +81,17 @@ amountToMove = Vector2(0, -1500)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="BackgroundMusic"]
 
+[node name="death" type="AudioStreamPlayer2D" parent="BackgroundMusic"]
+stream = ExtResource("10_vp56d")
+
 [node name="BubbleGenerator" parent="." instance=ExtResource("5_kqkir")]
 position = Vector2(821, 448)
 
 [node name="Player" parent="." instance=ExtResource("4_vcoof")]
 position = Vector2(130, 280)
+
+[node name="PlayerDying" parent="Player/PlayerPhysics/PlayerSfx" index="0"]
+stream = ExtResource("13_ewi50")
 
 [node name="RemoteTransform2D" parent="Player/PlayerPhysics" index="2"]
 remote_path = NodePath("../../../Camera2D")
@@ -112,5 +120,7 @@ position = Vector2(1795, 937)
 position = Vector2(2318, 952)
 scale = Vector2(0.838347, 0.838347)
 scene = ExtResource("15_t5lyc")
+
+[connection signal="deleteado" from="Player/PlayerPhysics" to="Player/Sprite2D" method="_on_player_physics_deleteado"]
 
 [editable path="Player"]

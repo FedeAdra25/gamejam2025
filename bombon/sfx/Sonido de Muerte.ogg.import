@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dko47xf7cgml2"
+path="res://.godot/imported/Sonido de Muerte.ogg-9d032ab7ad67bd0771c6af12f14b33c3.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/Sonido de Muerte.ogg"
+dest_files=["res://.godot/imported/Sonido de Muerte.ogg-9d032ab7ad67bd0771c6af12f14b33c3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

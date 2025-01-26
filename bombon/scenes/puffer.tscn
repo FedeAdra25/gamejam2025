@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://hdhekjgfh4tc"]
+[gd_scene load_steps=7 format=3 uid="uid://cp42db40rw2sv"]
 
 [ext_resource type="Texture2D" uid="uid://b1elx88tw3r2y" path="res://sprites/puffer_s.png" id="1_ryega"]
 [ext_resource type="Script" path="res://scripts/sponge.gd" id="1_sj0c8"]

@@ -201,6 +201,7 @@ position = Vector2(1366, 1029)
 [node name="puffer" parent="." instance=ExtResource("12_ce81h")]
 position = Vector2(2076, 294)
 scale = Vector2(4.13244, 4.13244)
+script = null
 
 [node name="FinishLine" parent="." instance=ExtResource("13_shash")]
 position = Vector2(2059, 1005)

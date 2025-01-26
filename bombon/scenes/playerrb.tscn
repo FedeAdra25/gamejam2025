@@ -166,3 +166,4 @@ animation = &"die"
 script = ExtResource("3_0ttpv")
 
 [connection signal="body_exited" from="PlayerPhysics" to="PlayerPhysics" method="_on_body_exited"]
+[connection signal="deleteado" from="PlayerPhysics" to="Sprite2D" method="_on_player_physics_deleteado"]

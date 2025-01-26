@@ -1,0 +1,52 @@
+[gd_scene load_steps=11 format=3 uid="uid://c8g1a0s80ohuo"]
+
+[ext_resource type="Script" path="res://scripts/credits_animator.gd" id="1_wp0at"]
+[ext_resource type="Texture2D" uid="uid://di34l6tl3wjob" path="res://sprites/credits00.jpg" id="2_isqim"]
+[ext_resource type="Texture2D" uid="uid://cgy2qdosgv4hh" path="res://sprites/credits01.jpg" id="3_pklng"]
+[ext_resource type="Texture2D" uid="uid://cnfkfphbfrpom" path="res://sprites/credits02.jpg" id="4_ry4ln"]
+[ext_resource type="Texture2D" uid="uid://b1axv2ve1wtef" path="res://sprites/credits03.jpg" id="5_4hiqs"]
+[ext_resource type="Script" path="res://scripts/load_scene.gd" id="6_7cn7y"]
+[ext_resource type="Script" path="res://scripts/exit_script.gd" id="6_uv382"]
+[ext_resource type="Texture2D" uid="uid://cgd7b1utofia5" path="res://icon.svg" id="7_p3opw"]
+[ext_resource type="PackedScene" uid="uid://c06fu6nuuvn3d" path="res://levels/title_screen.tscn" id="9_avbbq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u5n0f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_isqim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pklng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ry4ln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4hiqs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource("1_wp0at")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u5n0f")
+centered = false
+
+[node name="exit" type="Node" parent="."]
+script = ExtResource("6_uv382")
+
+[node name="Botón_Volver" type="Button" parent="."]
+offset_left = 67.0
+offset_top = 77.0
+offset_right = 203.0
+offset_bottom = 213.0
+icon = ExtResource("7_p3opw")
+script = ExtResource("6_7cn7y")
+scene = ExtResource("9_avbbq")
+
+[connection signal="pressed" from="Botón_Volver" to="Botón_Volver" method="_on_pressed"]

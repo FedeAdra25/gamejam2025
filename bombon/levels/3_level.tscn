@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://clbu3qsu0140n"]
+[gd_scene load_steps=18 format=3 uid="uid://clbu3qsu0140n"]
 
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="1_82ipf"]
 [ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="2_en7tu"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" path="res://scenes/spikes.tscn" id="14_go0tx"]
 [ext_resource type="PackedScene" uid="uid://cgtbdkncq2wat" path="res://scenes/pipe_end.tscn" id="15_0dqv1"]
 [ext_resource type="PackedScene" uid="uid://6ofnwx3mpofb" path="res://scenes/puffer.tscn" id="15_8ejlx"]
-[ext_resource type="PackedScene" uid="uid://bj5eguiy021kk" path="res://levels/4_level.tscn" id="15_ckfjh"]
 [ext_resource type="Script" path="res://scripts/puffer.gd" id="16_sk7bl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
@@ -327,7 +326,6 @@ scale = Vector2(1, 0.894525)
 [node name="FinishLine" parent="." instance=ExtResource("15_0dqv1")]
 position = Vector2(2326, 925)
 scale = Vector2(0.75, 0.75)
-scene = ExtResource("15_ckfjh")
 
 [node name="puffer" parent="." instance=ExtResource("15_8ejlx")]
 position = Vector2(590, 471)

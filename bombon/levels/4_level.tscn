@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bj5eguiy021kk"]
+[gd_scene load_steps=16 format=3 uid="uid://bj5eguiy021kk"]
 
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="1_8ckk1"]
 [ext_resource type="PackedScene" uid="uid://bd3l37avnu1at" path="res://scenes/jelly.tscn" id="2_1f2ly"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" path="res://scenes/shark.tscn" id="10_8kx6g"]
 [ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="10_s0w3q"]
 [ext_resource type="PackedScene" uid="uid://6ofnwx3mpofb" path="res://scenes/puffer.tscn" id="12_e2so3"]
-[ext_resource type="PackedScene" uid="uid://cjpbyobmve6kq" path="res://levels/1_level.tscn" id="12_j7sjy"]
 [ext_resource type="PackedScene" uid="uid://cgtbdkncq2wat" path="res://scenes/pipe_end.tscn" id="13_6e5qq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
@@ -129,7 +128,6 @@ script = null
 position = Vector2(73, 173)
 rotation = 0.0
 scale = Vector2(0.75, 0.75)
-scene = ExtResource("12_j7sjy")
 
 [node name="Platforms" type="Node" parent="."]
 

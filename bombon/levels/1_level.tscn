@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cjpbyobmve6kq"]
+[gd_scene load_steps=15 format=3 uid="uid://cjpbyobmve6kq"]
 
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="1_p4huw"]
 [ext_resource type="PackedScene" uid="uid://dt1aw6txf0sk3" path="res://scenes/surface.tscn" id="2_cl5yu"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" path="res://scenes/spikes.tscn" id="11_e7tgb"]
 [ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="11_ujc4c"]
 [ext_resource type="PackedScene" uid="uid://cgtbdkncq2wat" path="res://scenes/pipe_end.tscn" id="12_hgee5"]
-[ext_resource type="PackedScene" uid="uid://d10og4j3rjqte" path="res://levels/2_level.tscn" id="13_li0ho"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
 
@@ -180,6 +179,5 @@ scale = Vector2(1, 0.75)
 [node name="FinishLine" parent="." instance=ExtResource("12_hgee5")]
 position = Vector2(2322, 926)
 scale = Vector2(0.75, 0.75)
-scene = ExtResource("13_li0ho")
 
 [editable path="Player"]

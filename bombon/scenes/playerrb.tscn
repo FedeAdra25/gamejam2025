@@ -80,7 +80,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h3ew0")
 }, {
-"duration": 1.0,
+"duration": 10.0,
 "texture": SubResource("AtlasTexture_82bmi")
 }],
 "loop": false,
@@ -162,7 +162,7 @@ max_polyphony = 3
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.339608, 0.339608)
 sprite_frames = SubResource("SpriteFrames_m4nii")
-animation = &"walk"
+animation = &"die"
 script = ExtResource("3_0ttpv")
 
 [connection signal="body_exited" from="PlayerPhysics" to="PlayerPhysics" method="_on_body_exited"]

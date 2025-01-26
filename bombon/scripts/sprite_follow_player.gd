@@ -9,7 +9,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if flag_deleteado:
-		play("up")
+		play("die")
 		return
 	var velocity = playerPhysics.linear_velocity
 	if velocity.x > 0:

@@ -139,31 +139,25 @@ scale = Vector2(0.99632, 0.766909)
 [node name="PlatformWithSpikes" parent="Platforms" instance=ExtResource("11_5jlca")]
 position = Vector2(2339, 668)
 scale = Vector2(0.70478, 0.70478)
-SPEED = 300.0
 
 [node name="PlatformWithSpikes2" parent="Platforms" instance=ExtResource("11_5jlca")]
 position = Vector2(2241, 670)
 scale = Vector2(0.70478, 0.70478)
-SPEED = 300.0
 
 [node name="PlatformWithSpikes3" parent="Platforms" instance=ExtResource("11_5jlca")]
 position = Vector2(2137, 676)
 scale = Vector2(0.70478, 0.70478)
-SPEED = 300.0
 
 [node name="PlatformWithSpikes4" parent="Platforms" instance=ExtResource("11_5jlca")]
 position = Vector2(2031, 672)
 scale = Vector2(0.70478, 0.70478)
-SPEED = 300.0
 
 [node name="PlatformWithSpikes6" parent="Platforms" instance=ExtResource("11_5jlca")]
 position = Vector2(1655, 688)
 scale = Vector2(0.70478, 0.70478)
-SPEED = 300.0
 
 [node name="PlatformWithSpikes7" parent="Platforms" instance=ExtResource("11_5jlca")]
 position = Vector2(1549, 690)
 scale = Vector2(0.70478, 0.70478)
-SPEED = 300.0
 
 [editable path="Player"]

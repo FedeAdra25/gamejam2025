@@ -27,7 +27,7 @@ gravity = Vector3(0, 98, 0)
 scale_min = 0.01
 scale_max = 0.3
 
-[node name="Level1" type="Node2D"]
+[node name="Level4" type="Node2D"]
 position = Vector2(-6, 0)
 
 [node name="Node" type="Node" parent="."]

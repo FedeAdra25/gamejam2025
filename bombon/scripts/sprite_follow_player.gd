@@ -23,7 +23,6 @@ func _process(delta: float) -> void:
 		play("down")
 	elif abs(velocity.x) <= 0.4:
 		play("idle")
-	print("velocity -> ", velocity, "linear velocity -> ", playerPhysics.linear_velocity)
 	speed_scale = playerPhysics.linear_velocity.length() * delta
 	#print(speed_scale)
 	global_position = playerPhysics.global_position

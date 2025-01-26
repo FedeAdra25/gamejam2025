@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5em7oso028vc"]
 
 [ext_resource type="Script" path="res://scripts/sponge.gd" id="1_a33xt"]
-[ext_resource type="Texture2D" uid="uid://bpev42g1i06vh" path="res://sprites/sponge_template.png" id="2_gb0o0"]
+[ext_resource type="Texture2D" uid="uid://dsr4o454yvxi" path="res://sprites/sponge.png" id="2_14p1r"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mt0jw"]
-radius = 70.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qa1bb"]
+size = Vector2(352, 200)
 
 [node name="Sponge" type="Area2D"]
 script = ExtResource("1_a33xt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_gb0o0")
+texture = ExtResource("2_14p1r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_mt0jw")
+shape = SubResource("RectangleShape2D_qa1bb")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

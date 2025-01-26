@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://jbyfbmmldemd"]
+
+[ext_resource type="Script" path="res://scripts/load_scene.gd" id="2_lxopk"]
+
+[node name="Botón_Volver" type="Button"]
+offset_right = 136.0
+offset_bottom = 136.0
+script = ExtResource("2_lxopk")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

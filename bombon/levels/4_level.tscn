@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bj5eguiy021kk"]
+[gd_scene load_steps=17 format=3 uid="uid://bj5eguiy021kk"]
 
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="1_8ckk1"]
 [ext_resource type="PackedScene" uid="uid://bd3l37avnu1at" path="res://scenes/jelly.tscn" id="2_1f2ly"]
@@ -6,12 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://ci2i83qulla2u" path="res://sprites/Background 0.3.jpg" id="4_tenuk"]
 [ext_resource type="Texture2D" uid="uid://bjj5myaluho47" path="res://sprites/pipe.png" id="5_g0y6q"]
 [ext_resource type="Texture2D" uid="uid://ckbwehd1arqx" path="res://sprites/bubble.png" id="6_o23ay"]
-[ext_resource type="PackedScene" uid="uid://b8xwevy5axt5m" path="res://scenes/camera.tscn" id="7_wn7cy"]
+[ext_resource type="PackedScene" uid="uid://dvg0crd22tv4v" path="res://scenes/camera.tscn" id="7_wn7cy"]
 [ext_resource type="PackedScene" uid="uid://575duwk8wwow" path="res://scenes/playerrb.tscn" id="8_7ktt2"]
 [ext_resource type="PackedScene" uid="uid://b5em7oso028vc" path="res://scenes/sponge.tscn" id="9_aglyd"]
-[ext_resource type="PackedScene" path="res://scenes/shark.tscn" id="10_8kx6g"]
-[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="10_s0w3q"]
-[ext_resource type="PackedScene" uid="uid://6ofnwx3mpofb" path="res://scenes/puffer.tscn" id="12_e2so3"]
+[ext_resource type="PackedScene" uid="uid://cmdbh32ttv8vx" path="res://scenes/shark.tscn" id="10_8kx6g"]
+[ext_resource type="PackedScene" uid="uid://b6mayorbuqksf" path="res://scenes/platform.tscn" id="10_s0w3q"]
+[ext_resource type="PackedScene" uid="uid://csmyjr05qm6ei" path="res://levels/win_screen.tscn" id="12_dkihl"]
+[ext_resource type="PackedScene" uid="uid://cp42db40rw2sv" path="res://scenes/puffer.tscn" id="12_e2so3"]
 [ext_resource type="PackedScene" uid="uid://cgtbdkncq2wat" path="res://scenes/pipe_end.tscn" id="13_6e5qq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
@@ -128,6 +129,7 @@ script = null
 position = Vector2(73, 173)
 rotation = 0.0
 scale = Vector2(0.75, 0.75)
+scene = ExtResource("12_dkihl")
 
 [node name="Platforms" type="Node" parent="."]
 

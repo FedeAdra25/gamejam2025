@@ -1,19 +1,19 @@
 [gd_scene load_steps=17 format=3 uid="uid://d10og4j3rjqte"]
 
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="1_hhj4t"]
-[ext_resource type="PackedScene" path="res://scenes/jelly.tscn" id="2_fiikb"]
+[ext_resource type="PackedScene" uid="uid://bd3l37avnu1at" path="res://scenes/jelly.tscn" id="2_fiikb"]
 [ext_resource type="PackedScene" uid="uid://dt1aw6txf0sk3" path="res://scenes/surface.tscn" id="3_f5646"]
 [ext_resource type="Texture2D" uid="uid://ci2i83qulla2u" path="res://sprites/Background 0.3.jpg" id="4_2jdyv"]
 [ext_resource type="Texture2D" uid="uid://bjj5myaluho47" path="res://sprites/pipe.png" id="5_rm2mo"]
 [ext_resource type="Texture2D" uid="uid://ckbwehd1arqx" path="res://sprites/bubble.png" id="6_57vu0"]
-[ext_resource type="PackedScene" path="res://scenes/camera.tscn" id="7_ife6o"]
+[ext_resource type="PackedScene" uid="uid://dvg0crd22tv4v" path="res://scenes/camera.tscn" id="7_ife6o"]
 [ext_resource type="PackedScene" uid="uid://575duwk8wwow" path="res://scenes/playerrb.tscn" id="9_k2d4d"]
 [ext_resource type="PackedScene" uid="uid://b5em7oso028vc" path="res://scenes/sponge.tscn" id="10_0dl23"]
 [ext_resource type="PackedScene" uid="uid://b6mayorbuqksf" path="res://scenes/platform.tscn" id="11_4rxj1"]
 [ext_resource type="PackedScene" uid="uid://cp42db40rw2sv" path="res://scenes/puffer.tscn" id="12_ce81h"]
-[ext_resource type="PackedScene" path="res://scenes/spikes.tscn" id="12_p5ua8"]
-[ext_resource type="PackedScene" path="res://scenes/pipe_end.tscn" id="13_shash"]
-[ext_resource type="PackedScene" uid="uid://clbu3qsu0140n" path="res://levels/3_level.tscn" id="14_ej1ld"]
+[ext_resource type="PackedScene" uid="uid://bd2t10pe6o5ja" path="res://scenes/spikes.tscn" id="12_p5ua8"]
+[ext_resource type="PackedScene" uid="uid://cgtbdkncq2wat" path="res://scenes/pipe_end.tscn" id="13_shash"]
+[ext_resource type="PackedScene" uid="uid://b5qfmj4kbkyew" path="res://levels/3_level.tscn" id="14_1hhty"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
 
@@ -206,7 +206,7 @@ scale = Vector2(4.13244, 4.13244)
 position = Vector2(2059, 1005)
 rotation = 4.71811
 scale = Vector2(0.75, 0.75)
-scene = ExtResource("14_ej1ld")
+scene = ExtResource("14_1hhty")
 
 [node name="Area2D" parent="." instance=ExtResource("12_p5ua8")]
 position = Vector2(1770, 825)

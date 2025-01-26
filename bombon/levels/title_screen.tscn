@@ -31,5 +31,7 @@ offset_bottom = 889.0
 flat = true
 script = ExtResource("4_n2845")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="pressed" from="TitleBackground/button play" to="TitleBackground/button play" method="_on_pressed"]
 [connection signal="pressed" from="TitleBackground/button credits" to="TitleBackground/button credits" method="_on_pressed"]

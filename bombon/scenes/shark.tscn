@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmdbh32ttv8vx"]
+
+[ext_resource type="Texture2D" uid="uid://cdx7gl0o775rb" path="res://sprites/shark.png" id="1_lcsrn"]
+[ext_resource type="Script" path="res://scripts/enemy_with_path.gd" id="1_npf7o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jthj"]
+size = Vector2(550, 898)
+
+[node name="Shark" type="Area2D"]
+script = ExtResource("1_npf7o")
+SPEED = 1000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8jthj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lcsrn")

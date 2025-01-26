@@ -12,7 +12,8 @@ func _process(delta: float) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		print(player.position)
 	if moveCamera:
-		global_position += Vector2(delta * 100, 0)
+		position += Vector2(delta * 100, 0)
+		
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d10og4j3rjqte"]
+[gd_scene load_steps=16 format=3 uid="uid://d10og4j3rjqte"]
 
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="1_hhj4t"]
 [ext_resource type="PackedScene" uid="uid://bd3l37avnu1at" path="res://scenes/jelly.tscn" id="2_fiikb"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://6ofnwx3mpofb" path="res://scenes/puffer.tscn" id="12_ce81h"]
 [ext_resource type="PackedScene" path="res://scenes/spikes.tscn" id="12_p5ua8"]
 [ext_resource type="PackedScene" uid="uid://cgtbdkncq2wat" path="res://scenes/pipe_end.tscn" id="13_shash"]
-[ext_resource type="PackedScene" uid="uid://clbu3qsu0140n" path="res://levels/3_level.tscn" id="14_ej1ld"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
 
@@ -27,15 +26,15 @@ gravity = Vector3(0, 98, 0)
 scale_min = 0.01
 scale_max = 0.3
 
-[node name="Level1" type="Node2D"]
+[node name="Level2" type="Node2D"]
 position = Vector2(-6, 0)
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("1_hhj4t")
 
 [node name="Jelly" parent="." instance=ExtResource("2_fiikb")]
-position = Vector2(196, 759)
-scale = Vector2(0.695722, 0.747095)
+position = Vector2(252, 759)
+scale = Vector2(0.85806, 0.92142)
 SPEED = 0.0
 amountToMove = Vector2(0, 0)
 DELAY = 0.0
@@ -109,6 +108,16 @@ scale = Vector2(1.13871, 1.16736)
 position = Vector2(540, 1011)
 rotation = 1.57956
 scale = Vector2(1, 0.8)
+
+[node name="Platform18" parent="Platforms" instance=ExtResource("11_4rxj1")]
+position = Vector2(-55, 623)
+rotation = 1.57956
+scale = Vector2(10.1853, 0.851703)
+
+[node name="Platform19" parent="Platforms" instance=ExtResource("11_4rxj1")]
+position = Vector2(2446, 560)
+rotation = 1.57956
+scale = Vector2(7.74066, -0.81477)
 
 [node name="Platform2" parent="Platforms" instance=ExtResource("11_4rxj1")]
 position = Vector2(540, 878)
@@ -207,7 +216,6 @@ script = null
 position = Vector2(2059, 1005)
 rotation = 4.71811
 scale = Vector2(0.75, 0.75)
-scene = ExtResource("14_ej1ld")
 
 [node name="Area2D" parent="." instance=ExtResource("12_p5ua8")]
 position = Vector2(1770, 825)

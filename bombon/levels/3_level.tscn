@@ -1,8 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://b5qfmj4kbkyew"]
 
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="1_82ipf"]
-[ext_resource type="PackedScene" uid="uid://b6mayorbuqksf" path="res://scenes/platform.tscn" id="2_en7tu"]
-[ext_resource type="PackedScene" uid="uid://cvpqh8us1qj2e" path="res://scenes/platform_with_spikes.tscn" id="3_mx80r"]
+[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="2_en7tu"]
 [ext_resource type="PackedScene" uid="uid://dt1aw6txf0sk3" path="res://scenes/surface.tscn" id="3_qu37q"]
 [ext_resource type="Texture2D" uid="uid://ci2i83qulla2u" path="res://sprites/Background 0.3.jpg" id="4_mq8be"]
 [ext_resource type="Texture2D" uid="uid://bjj5myaluho47" path="res://sprites/pipe.png" id="5_p52px"]
@@ -14,7 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://6bp3h8a7xwg2" path="res://scenes/hooks.tscn" id="11_v6vk7"]
 [ext_resource type="PackedScene" uid="uid://bd2t10pe6o5ja" path="res://scenes/spikes.tscn" id="14_go0tx"]
 [ext_resource type="PackedScene" uid="uid://cgtbdkncq2wat" path="res://scenes/pipe_end.tscn" id="15_0dqv1"]
-[ext_resource type="PackedScene" uid="uid://cp42db40rw2sv" path="res://scenes/puffer.tscn" id="15_8ejlx"]
+[ext_resource type="PackedScene" uid="uid://6ofnwx3mpofb" path="res://scenes/puffer.tscn" id="15_8ejlx"]
+[ext_resource type="Script" path="res://scripts/puffer.gd" id="16_sk7bl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
 
@@ -28,7 +28,7 @@ gravity = Vector3(0, 98, 0)
 scale_min = 0.01
 scale_max = 0.3
 
-[node name="Level1" type="Node2D"]
+[node name="Level3" type="Node2D"]
 position = Vector2(-6, 0)
 
 [node name="Platforms" type="Node" parent="."]
@@ -38,6 +38,16 @@ script = ExtResource("1_82ipf")
 position = Vector2(360, 1019)
 rotation = 1.5708
 scale = Vector2(1, 0.830248)
+
+[node name="Platform28" parent="Platforms" instance=ExtResource("2_en7tu")]
+position = Vector2(-54, 1000)
+rotation = 1.5708
+scale = Vector2(16.9631, 0.703617)
+
+[node name="Platform29" parent="Platforms" instance=ExtResource("2_en7tu")]
+position = Vector2(2441, 907)
+rotation = 1.5708
+scale = Vector2(16.9631, 0.703617)
 
 [node name="Platform2" parent="Platforms" instance=ExtResource("2_en7tu")]
 position = Vector2(360, 880)
@@ -76,6 +86,21 @@ scale = Vector2(1, 0.8)
 
 [node name="Platform9" parent="Platforms" instance=ExtResource("2_en7tu")]
 position = Vector2(755, 287)
+rotation = -0.00604796
+scale = Vector2(1, 0.8)
+
+[node name="Platform30" parent="Platforms" instance=ExtResource("2_en7tu")]
+position = Vector2(898, 287)
+rotation = -0.00604796
+scale = Vector2(1, 0.8)
+
+[node name="Platform31" parent="Platforms" instance=ExtResource("2_en7tu")]
+position = Vector2(1041, 287)
+rotation = -0.00604796
+scale = Vector2(1, 0.8)
+
+[node name="Platform32" parent="Platforms" instance=ExtResource("2_en7tu")]
+position = Vector2(1181, 287)
 rotation = -0.00604796
 scale = Vector2(1, 0.8)
 
@@ -169,21 +194,6 @@ position = Vector2(2171, 712)
 rotation = -0.0100427
 scale = Vector2(1, 0.8)
 
-[node name="PlatformWithSpikes" parent="Platforms" instance=ExtResource("3_mx80r")]
-position = Vector2(901, 303)
-rotation = -3.12894
-scale = Vector2(0.9, 0.636)
-
-[node name="PlatformWithSpikes2" parent="Platforms" instance=ExtResource("3_mx80r")]
-position = Vector2(1175, 303)
-rotation = -3.12894
-scale = Vector2(0.9, 0.636)
-
-[node name="PlatformWithSpikes3" parent="Platforms" instance=ExtResource("3_mx80r")]
-position = Vector2(1042, 303)
-rotation = -3.12894
-scale = Vector2(0.9, 0.636)
-
 [node name="Surface" parent="." instance=ExtResource("3_qu37q")]
 position = Vector2(6, 12)
 
@@ -225,23 +235,23 @@ preprocess = 2.0
 visibility_rect = Rect2(0, 0, 3000, 200)
 
 [node name="Camera2D" parent="." instance=ExtResource("7_m7b2q")]
-position = Vector2(184, 784)
+position = Vector2(184, 1017)
 
 [node name="Sponge" parent="." instance=ExtResource("8_jo6lq")]
-position = Vector2(1504, 592)
+position = Vector2(1609, 594)
 rotation = -0.0544933
-scale = Vector2(1.21162, 0.822587)
+scale = Vector2(0.931402, 0.632343)
 
 [node name="Sponge2" parent="." instance=ExtResource("8_jo6lq")]
-position = Vector2(1765, 825)
+position = Vector2(1700, 825)
 rotation = -3.16429
-scale = Vector2(1.21162, 0.822587)
+scale = Vector2(0.910863, 0.618399)
 
 [node name="Shark" parent="." instance=ExtResource("9_tgw6n")]
 position = Vector2(1208, 1692)
 scale = Vector2(1.09342, 1.35683)
 SPEED = 1500.0
-amountToMove = Vector2(0, -1000)
+amountToMove = Vector2(0, -900)
 boomerang = true
 DELAY = 2.0
 
@@ -251,20 +261,20 @@ DELAY = 2.0
 
 [node name="Player" parent="." instance=ExtResource("10_lm0gk")]
 unique_name_in_owner = true
-position = Vector2(184, 784)
+position = Vector2(184, 1017)
 
 [node name="RemoteTransform2D" parent="Player/PlayerPhysics" index="2"]
 remote_path = NodePath("../../../Camera2D")
 
 [node name="Hooks1" parent="." instance=ExtResource("11_v6vk7")]
-position = Vector2(952, -93)
+position = Vector2(852, -90)
 scale = Vector2(0.538387, 0.35535)
 SPEED = 1000.0
 amountToMove = Vector2(0, 200)
 DELAY = 1.0
 
 [node name="Hooks2" parent="." instance=ExtResource("11_v6vk7")]
-position = Vector2(1151, -91)
+position = Vector2(1103, -90)
 scale = Vector2(0.538387, 0.35535)
 SPEED = 1000.0
 amountToMove = Vector2(0, 200)
@@ -272,14 +282,14 @@ start_delay = 2.0
 DELAY = 1.0
 
 [node name="Hooks3" parent="." instance=ExtResource("11_v6vk7")]
-position = Vector2(1351, -91)
+position = Vector2(1351, -90)
 scale = Vector2(0.538387, 0.35535)
 SPEED = 1000.0
 amountToMove = Vector2(0, 200)
 DELAY = 1.0
 
 [node name="Hooks4" parent="." instance=ExtResource("11_v6vk7")]
-position = Vector2(1549, -91)
+position = Vector2(1601, -90)
 scale = Vector2(0.538387, 0.35535)
 SPEED = 1000.0
 amountToMove = Vector2(0, 200)
@@ -295,7 +305,18 @@ position = Vector2(664, 1042)
 scale = Vector2(1, 0.894525)
 
 [node name="Area2D3" parent="." instance=ExtResource("14_go0tx")]
-position = Vector2(1463, 1047)
+position = Vector2(907, 374)
+rotation = 3.14159
+scale = Vector2(1, 0.894525)
+
+[node name="Area2D5" parent="." instance=ExtResource("14_go0tx")]
+position = Vector2(1085, 374)
+rotation = 3.14159
+scale = Vector2(1, 0.894525)
+
+[node name="Area2D6" parent="." instance=ExtResource("14_go0tx")]
+position = Vector2(1259, 374)
+rotation = 3.14159
 scale = Vector2(1, 0.894525)
 
 [node name="Area2D4" parent="." instance=ExtResource("14_go0tx")]
@@ -307,7 +328,8 @@ position = Vector2(2326, 925)
 scale = Vector2(0.75, 0.75)
 
 [node name="puffer" parent="." instance=ExtResource("15_8ejlx")]
-position = Vector2(602, 521)
+position = Vector2(590, 471)
 scale = Vector2(3, 3)
+script = ExtResource("16_sk7bl")
 
 [editable path="Player"]

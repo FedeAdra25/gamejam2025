@@ -1,13 +1,17 @@
 extends RigidBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -300.0
-const JUMP_COOLDOWN = 0.3
+@export var SPEED = 300.0
+@export var JUMP_VELOCITY = -300.0
+@export var JUMP_COOLDOWN = 0.3
+@export var FUERZA_ESPONJA = 40
+@export var FUERZA_PEZ_GLOBO = 40
 var currentVelocity:float = 0.0
 var timePressed = 0
 var jumpCooldown = 0
 var isJumping = false
 var isCurrent = false
+
+
 @onready var playerDiesSfx = $PlayerSfx/PlayerDying
 @onready var playerJumpSfx = $PlayerSfx/PlayerJumping
 # Called when the node enters the scene tree for the first time.
@@ -49,11 +53,9 @@ func current() -> void:
 	isCurrent = !isCurrent
 
 func sponge_jump(sponge_position:Vector2) -> void:
-	var angle = get_angle_to(sponge_position)
-	print("Collided at ", angle, "degrees")
-	apply_central_impulse(Vector2(0,JUMP_VELOCITY * 25))
+	var direccionDeSalto = Vector2((sponge_position.x - global_position.x) * -1, (sponge_position.y - global_position.y) * -1)
+	apply_central_impulse(direccionDeSalto * FUERZA_ESPONJA)
 
 func spring(obj_pos) -> void:
-	print("boing")
 	var direccionDeSalto = Vector2((obj_pos.x - global_position.x) * -1, (obj_pos.y - global_position.y) * -1)
-	apply_central_impulse(direccionDeSalto * 40)
+	apply_central_impulse(direccionDeSalto * FUERZA_PEZ_GLOBO)

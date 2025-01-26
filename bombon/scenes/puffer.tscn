@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cp42db40rw2sv"]
+[gd_scene load_steps=7 format=3 uid="uid://hdhekjgfh4tc"]
 
-[ext_resource type="Script" path="res://scenes/puffer.gd" id="1_3snr1"]
 [ext_resource type="Texture2D" uid="uid://b1elx88tw3r2y" path="res://sprites/puffer_s.png" id="1_ryega"]
+[ext_resource type="Script" path="res://scripts/sponge.gd" id="1_sj0c8"]
 [ext_resource type="Texture2D" uid="uid://p6vr1f2lbpk" path="res://sprites/puffer_l.png" id="3_nodqs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i4g1d"]
@@ -32,7 +32,7 @@ radius = 31.9988
 height = 90.0314
 
 [node name="puffer" type="Area2D"]
-script = ExtResource("1_3snr1")
+script = ExtResource("1_sj0c8")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.3, 0.3)

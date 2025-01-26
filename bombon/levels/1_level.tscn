@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" path="res://scenes/bubble_generator.tscn" id="7_0jlnq"]
 [ext_resource type="PackedScene" uid="uid://bd3l37avnu1at" path="res://scenes/jelly.tscn" id="8_pdqgo"]
 [ext_resource type="PackedScene" uid="uid://575duwk8wwow" path="res://scenes/playerrb.tscn" id="9_iuuki"]
-[ext_resource type="PackedScene" uid="uid://cvpqh8us1qj2e" path="res://scenes/platform_with_spikes.tscn" id="11_5jlca"]
+[ext_resource type="PackedScene" path="res://scenes/spikes.tscn" id="11_e7tgb"]
 [ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="11_ujc4c"]
 [ext_resource type="PackedScene" uid="uid://cgtbdkncq2wat" path="res://scenes/pipe_end.tscn" id="12_hgee5"]
 [ext_resource type="PackedScene" uid="uid://d10og4j3rjqte" path="res://levels/2_level.tscn" id="13_li0ho"]
@@ -71,7 +71,7 @@ preprocess = 2.0
 visibility_rect = Rect2(0, 0, 3000, 200)
 
 [node name="Camera2D" parent="." instance=ExtResource("6_j5cec")]
-position = Vector2(204, 144)
+position = Vector2(204, 162)
 
 [node name="BackgroundMusic" type="Node2D" parent="."]
 
@@ -90,7 +90,7 @@ DELAY = 0.0
 
 [node name="Player" parent="." instance=ExtResource("9_iuuki")]
 unique_name_in_owner = true
-position = Vector2(204, 144)
+position = Vector2(204, 162)
 
 [node name="RemoteTransform2D" parent="Player/PlayerPhysics" index="2"]
 remote_path = NodePath("../../../Camera2D")
@@ -117,6 +117,30 @@ scale = Vector2(1, 0.7)
 position = Vector2(497, 270)
 scale = Vector2(1, 0.7)
 
+[node name="Platform10" parent="Platforms" instance=ExtResource("11_ujc4c")]
+position = Vector2(1453, 653)
+scale = Vector2(1, 0.7)
+
+[node name="Platform11" parent="Platforms" instance=ExtResource("11_ujc4c")]
+position = Vector2(1585, 653)
+scale = Vector2(1, 0.7)
+
+[node name="Platform12" parent="Platforms" instance=ExtResource("11_ujc4c")]
+position = Vector2(1717, 653)
+scale = Vector2(1, 0.7)
+
+[node name="Platform13" parent="Platforms" instance=ExtResource("11_ujc4c")]
+position = Vector2(2323, 653)
+scale = Vector2(1, 0.7)
+
+[node name="Platform14" parent="Platforms" instance=ExtResource("11_ujc4c")]
+position = Vector2(2204, 653)
+scale = Vector2(1, 0.7)
+
+[node name="Platform15" parent="Platforms" instance=ExtResource("11_ujc4c")]
+position = Vector2(2085, 653)
+scale = Vector2(1, 0.7)
+
 [node name="Platform6" parent="Platforms" instance=ExtResource("11_ujc4c")]
 position = Vector2(854, 73)
 rotation = -1.58932
@@ -137,25 +161,21 @@ position = Vector2(863, 481)
 rotation = -1.6143
 scale = Vector2(1, 0.7)
 
-[node name="PlatformWithSpikes" parent="Platforms" instance=ExtResource("11_5jlca")]
-position = Vector2(2347, 670)
-scale = Vector2(1, 0.7)
+[node name="Area2D" parent="Platforms" instance=ExtResource("11_e7tgb")]
+position = Vector2(1500, 573)
+scale = Vector2(1, 0.75)
 
-[node name="PlatformWithSpikes2" parent="Platforms" instance=ExtResource("11_5jlca")]
-position = Vector2(2193, 670)
-scale = Vector2(1, 0.7)
+[node name="Area2D2" parent="Platforms" instance=ExtResource("11_e7tgb")]
+position = Vector2(1684, 573)
+scale = Vector2(1, 0.75)
 
-[node name="PlatformWithSpikes3" parent="Platforms" instance=ExtResource("11_5jlca")]
-position = Vector2(2046, 670)
-scale = Vector2(1, 0.7)
+[node name="Area2D3" parent="Platforms" instance=ExtResource("11_e7tgb")]
+position = Vector2(2108, 575)
+scale = Vector2(1, 0.75)
 
-[node name="PlatformWithSpikes6" parent="Platforms" instance=ExtResource("11_5jlca")]
-position = Vector2(1655, 670)
-scale = Vector2(1, 0.7)
-
-[node name="PlatformWithSpikes7" parent="Platforms" instance=ExtResource("11_5jlca")]
-position = Vector2(1506, 670)
-scale = Vector2(1, 0.7)
+[node name="Area2D4" parent="Platforms" instance=ExtResource("11_e7tgb")]
+position = Vector2(2303, 573)
+scale = Vector2(1, 0.75)
 
 [node name="FinishLine" parent="." instance=ExtResource("12_hgee5")]
 position = Vector2(2322, 926)

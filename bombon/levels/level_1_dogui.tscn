@@ -1,0 +1,120 @@
+[gd_scene load_steps=14 format=3 uid="uid://bptyfmruxst2i"]
+
+[ext_resource type="Texture2D" uid="uid://cb2vyn5j5wetd" path="res://sprites/placeholder_platform.png" id="1_rafgj"]
+[ext_resource type="Script" path="res://scripts/exit_script.gd" id="2_0pkok"]
+[ext_resource type="PackedScene" uid="uid://575duwk8wwow" path="res://scenes/playerrb.tscn" id="3_ohjfm"]
+[ext_resource type="PackedScene" uid="uid://wep76gxyff2s" path="res://scenes/enemy.tscn" id="4_m1rfv"]
+[ext_resource type="PackedScene" path="res://scenes/current.tscn" id="5_n7dmu"]
+[ext_resource type="PackedScene" uid="uid://bd3l37avnu1at" path="res://scenes/jelly.tscn" id="6_skl75"]
+[ext_resource type="PackedScene" uid="uid://dt1aw6txf0sk3" path="res://scenes/surface.tscn" id="7_mj305"]
+[ext_resource type="Texture2D" uid="uid://ci2i83qulla2u" path="res://sprites/Background 0.3.jpg" id="8_oukpy"]
+[ext_resource type="Texture2D" uid="uid://bjj5myaluho47" path="res://sprites/pipe.png" id="9_tnsym"]
+[ext_resource type="PackedScene" uid="uid://b8xwevy5axt5m" path="res://scenes/camera.tscn" id="10_ar1dd"]
+[ext_resource type="PackedScene" uid="uid://b5em7oso028vc" path="res://scenes/sponge.tscn" id="11_63m55"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvqyf"]
+size = Vector2(199, 98)
+
+[node name="Level1" type="Node2D"]
+position = Vector2(-6, 0)
+
+[node name="Floor" type="Node2D" parent="."]
+position = Vector2(594, 647)
+
+[node name="StaticFloor" type="StaticBody2D" parent="Floor"]
+position = Vector2(339, 433)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticFloor"]
+shape = SubResource("WorldBoundaryShape2D_n0ryr")
+one_way_collision = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Floor"]
+position = Vector2(568, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D2"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_pvqyf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor/StaticBody2D2"]
+texture = ExtResource("1_rafgj")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Floor"]
+position = Vector2(-322, 283)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D3"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_pvqyf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor/StaticBody2D3"]
+texture = ExtResource("1_rafgj")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Floor"]
+position = Vector2(-85, 209)
+rotation = 2.59813
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D4"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_pvqyf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor/StaticBody2D4"]
+texture = ExtResource("1_rafgj")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Floor"]
+position = Vector2(1223, 171)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D5"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_pvqyf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor/StaticBody2D5"]
+texture = ExtResource("1_rafgj")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("2_0pkok")
+
+[node name="Player" parent="." instance=ExtResource("3_ohjfm")]
+unique_name_in_owner = true
+position = Vector2(170, 129)
+
+[node name="Enemy" parent="." instance=ExtResource("4_m1rfv")]
+position = Vector2(1164, 995)
+
+[node name="Current" parent="." instance=ExtResource("5_n7dmu")]
+position = Vector2(858, 381)
+
+[node name="Jelly" parent="." instance=ExtResource("6_skl75")]
+position = Vector2(469, 356)
+
+[node name="Surface" parent="." instance=ExtResource("7_mj305")]
+position = Vector2(6, 12)
+
+[node name="Scenario" type="Node2D" parent="."]
+
+[node name="Background" type="Node2D" parent="Scenario"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Scenario/Background"]
+z_index = -1
+texture = ExtResource("8_oukpy")
+centered = false
+
+[node name="Props" type="Node2D" parent="Scenario"]
+
+[node name="Pipe" type="Sprite2D" parent="Scenario/Props"]
+position = Vector2(57, 149)
+scale = Vector2(0.556, 0.556)
+texture = ExtResource("9_tnsym")
+
+[node name="Pipe2" type="Sprite2D" parent="Scenario/Props"]
+position = Vector2(2346, 995)
+rotation = 3.14159
+scale = Vector2(0.556, 0.556)
+texture = ExtResource("9_tnsym")
+
+[node name="Camera2D" parent="." instance=ExtResource("10_ar1dd")]
+position = Vector2(0, -1)
+anchor_mode = 0
+
+[node name="Sponge" parent="." instance=ExtResource("11_63m55")]
+position = Vector2(1470, 994)

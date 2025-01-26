@@ -52,3 +52,8 @@ func sponge_jump(sponge_position:Vector2) -> void:
 	var angle = get_angle_to(sponge_position)
 	print("Collided at ", angle, "degrees")
 	apply_central_impulse(Vector2(0,JUMP_VELOCITY * 25))
+
+func spring(obj_pos) -> void:
+	print("boing")
+	var direccionDeSalto = Vector2((obj_pos.x - global_position.x) * -1, (obj_pos.y - global_position.y) * -1)
+	apply_central_impulse(direccionDeSalto * 40)

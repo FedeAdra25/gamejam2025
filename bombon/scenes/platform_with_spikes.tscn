@@ -1,17 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvpqh8us1qj2e"]
+[gd_scene load_steps=6 format=3 uid="uid://cvpqh8us1qj2e"]
 
 [ext_resource type="Texture2D" uid="uid://bx60f3jqqp622" path="res://sprites/platform_spikes.png" id="1_b4dm8"]
 [ext_resource type="Script" path="res://scripts/spikes_script.gd" id="1_ffc06"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1n8n"]
-size = Vector2(178, 136)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fcl7t"]
+radius = 39.0
+height = 166.0
 
-[node name="PlatformWithSpikes" type="StaticBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jiry4"]
+radius = 19.0
+height = 114.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8uyyg"]
+size = Vector2(19.3979, 66.5159)
+
+[node name="PlatformWithSpikes" type="Area2D"]
 script = ExtResource("1_ffc06")
-SPEED = 0.0
 
 [node name="Platform" type="Sprite2D" parent="."]
 texture = ExtResource("1_b4dm8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_b1n8n")
+position = Vector2(0, -35)
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_fcl7t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(53, -48)
+shape = SubResource("CapsuleShape2D_jiry4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-2.38419e-07, 53)
+scale = Vector2(9.15094, 1.64555)
+shape = SubResource("RectangleShape2D_8uyyg")

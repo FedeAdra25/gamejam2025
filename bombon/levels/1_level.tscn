@@ -1,16 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://41xrlpp8caj5"]
+[gd_scene load_steps=14 format=3 uid="uid://cjpbyobmve6kq"]
 
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="1_p4huw"]
 [ext_resource type="PackedScene" uid="uid://dt1aw6txf0sk3" path="res://scenes/surface.tscn" id="2_cl5yu"]
 [ext_resource type="Texture2D" uid="uid://ci2i83qulla2u" path="res://sprites/Background 0.3.jpg" id="3_hu38a"]
 [ext_resource type="Texture2D" uid="uid://bjj5myaluho47" path="res://sprites/pipe.png" id="4_muwo2"]
 [ext_resource type="Texture2D" uid="uid://ckbwehd1arqx" path="res://sprites/bubble.png" id="5_qrb7o"]
-[ext_resource type="PackedScene" uid="uid://b8xwevy5axt5m" path="res://scenes/camera.tscn" id="6_j5cec"]
+[ext_resource type="PackedScene" uid="uid://dvg0crd22tv4v" path="res://scenes/camera.tscn" id="6_j5cec"]
 [ext_resource type="PackedScene" path="res://scenes/bubble_generator.tscn" id="7_0jlnq"]
 [ext_resource type="PackedScene" uid="uid://bd3l37avnu1at" path="res://scenes/jelly.tscn" id="8_pdqgo"]
 [ext_resource type="PackedScene" uid="uid://575duwk8wwow" path="res://scenes/playerrb.tscn" id="9_iuuki"]
-[ext_resource type="PackedScene" path="res://scenes/platform_with_spikes.tscn" id="11_5jlca"]
-[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="11_ujc4c"]
+[ext_resource type="PackedScene" uid="uid://cvpqh8us1qj2e" path="res://scenes/platform_with_spikes.tscn" id="11_5jlca"]
+[ext_resource type="PackedScene" uid="uid://b6mayorbuqksf" path="res://scenes/platform.tscn" id="11_ujc4c"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
 
@@ -139,25 +139,31 @@ scale = Vector2(0.99632, 0.766909)
 [node name="PlatformWithSpikes" parent="Platforms" instance=ExtResource("11_5jlca")]
 position = Vector2(2339, 668)
 scale = Vector2(0.70478, 0.70478)
+SPEED = 300.0
 
 [node name="PlatformWithSpikes2" parent="Platforms" instance=ExtResource("11_5jlca")]
 position = Vector2(2241, 670)
 scale = Vector2(0.70478, 0.70478)
+SPEED = 300.0
 
 [node name="PlatformWithSpikes3" parent="Platforms" instance=ExtResource("11_5jlca")]
 position = Vector2(2137, 676)
 scale = Vector2(0.70478, 0.70478)
+SPEED = 300.0
 
 [node name="PlatformWithSpikes4" parent="Platforms" instance=ExtResource("11_5jlca")]
 position = Vector2(2031, 672)
 scale = Vector2(0.70478, 0.70478)
+SPEED = 300.0
 
 [node name="PlatformWithSpikes6" parent="Platforms" instance=ExtResource("11_5jlca")]
 position = Vector2(1655, 688)
 scale = Vector2(0.70478, 0.70478)
+SPEED = 300.0
 
 [node name="PlatformWithSpikes7" parent="Platforms" instance=ExtResource("11_5jlca")]
 position = Vector2(1549, 690)
 scale = Vector2(0.70478, 0.70478)
+SPEED = 300.0
 
 [editable path="Player"]

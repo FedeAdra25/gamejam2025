@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d2a4lre3abj16"]
+[gd_scene load_steps=17 format=3 uid="uid://d2a4lre3abj16"]
 
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="2_pcpng"]
 [ext_resource type="PackedScene" uid="uid://575duwk8wwow" path="res://scenes/playerrb.tscn" id="4_vcoof"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://6bp3h8a7xwg2" path="res://scenes/hooks.tscn" id="12_prfvy"]
 [ext_resource type="PackedScene" uid="uid://bd2t10pe6o5ja" path="res://scenes/spikes.tscn" id="13_qrmwc"]
 [ext_resource type="PackedScene" uid="uid://b6mayorbuqksf" path="res://scenes/platform.tscn" id="13_yaf3g"]
+[ext_resource type="PackedScene" uid="uid://cgtbdkncq2wat" path="res://scenes/pipe_end.tscn" id="14_c1ubq"]
+[ext_resource type="PackedScene" uid="uid://cjpbyobmve6kq" path="res://levels/1_level.tscn" id="15_t5lyc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
 
@@ -46,12 +48,6 @@ centered = false
 
 [node name="Pipe" type="Sprite2D" parent="Scenario/Props"]
 position = Vector2(57, 149)
-scale = Vector2(0.556, 0.556)
-texture = ExtResource("9_knw8h")
-
-[node name="Pipe2" type="Sprite2D" parent="Scenario/Props"]
-position = Vector2(2346, 995)
-rotation = 3.14159
 scale = Vector2(0.556, 0.556)
 texture = ExtResource("9_knw8h")
 
@@ -111,5 +107,10 @@ DELAY = 1.0
 
 [node name="Area2D" parent="." instance=ExtResource("13_qrmwc")]
 position = Vector2(1795, 937)
+
+[node name="FinishLine" parent="." instance=ExtResource("14_c1ubq")]
+position = Vector2(2318, 952)
+scale = Vector2(0.838347, 0.838347)
+scene = ExtResource("15_t5lyc")
 
 [editable path="Player"]

@@ -10,7 +10,9 @@ var timePressed = 0
 var jumpCooldown = 0
 var isJumping = false
 var isCurrent = false
-
+var deathflag = false
+var deathtimer = 0.0
+signal deleteado(value)
 
 @onready var playerDiesSfx = $PlayerSfx/PlayerDying
 @onready var playerJumpSfx = $PlayerSfx/PlayerJumping
@@ -20,6 +22,12 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	jumpCooldown -= delta
+	if (deathflag && deathtimer < 2.0):
+		deathtimer += delta
+		set_gravity_scale(0)
+		return
+	if (deathflag && deathtimer > 2.0):
+		get_tree().reload_current_scene()
 	if isCurrent:
 		apply_central_impulse(Vector2(0,JUMP_VELOCITY))
 	if Input.is_action_just_pressed("jump") && jumpCooldown <= 0.0:
@@ -46,8 +54,9 @@ func _physics_process(delta: float) -> void:
 
 
 func die() -> void:
+	deathflag = true
+	emit_signal("deleteado", true)
 	playerDiesSfx.play()
-	get_tree().reload_current_scene()
 	
 func current() -> void:
 	isCurrent = !isCurrent

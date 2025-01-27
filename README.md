@@ -21,3 +21,6 @@ We had lots of fun doing this game, so I hope that if you read this, you have fu
 
 That being said, shotout to [Miki](https://github.com/nagykorte) <3 it was a pleassure suffer the consecuences of our own actions (having studied programming) with you.
 
+# Play the game here
+
+[LINK](https://dogui.itch.io/el-seor-mofletes)

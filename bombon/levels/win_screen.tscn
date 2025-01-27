@@ -1,5 +1,20 @@
-[gd_scene format=3 uid="uid://csmyjr05qm6ei"]
+[gd_scene load_steps=4 format=3 uid="uid://csmyjr05qm6ei"]
+
+[ext_resource type="Script" path="res://scripts/timeout.gd" id="1_hln8n"]
+[ext_resource type="Texture2D" uid="uid://m3dk2es6pxi8" path="res://sprites/lore.jpg" id="1_o4jh7"]
+[ext_resource type="Script" path="res://scripts/exit_script.gd" id="3_jbd5f"]
 
 [node name="TitleScreen" type="Node2D"]
+script = ExtResource("1_hln8n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o4jh7")
+centered = false
+script = ExtResource("3_jbd5f")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

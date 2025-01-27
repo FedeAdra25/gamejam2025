@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b5qfmj4kbkyew"]
+[gd_scene load_steps=20 format=3 uid="uid://b5qfmj4kbkyew"]
 
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="1_82ipf"]
 [ext_resource type="PackedScene" uid="uid://b6mayorbuqksf" path="res://scenes/platform.tscn" id="2_en7tu"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dvg0crd22tv4v" path="res://scenes/camera.tscn" id="7_m7b2q"]
 [ext_resource type="PackedScene" uid="uid://b5em7oso028vc" path="res://scenes/sponge.tscn" id="8_jo6lq"]
 [ext_resource type="PackedScene" uid="uid://cmdbh32ttv8vx" path="res://scenes/shark.tscn" id="9_tgw6n"]
+[ext_resource type="AudioStream" uid="uid://dtkl2vp88sywx" path="res://music/musica.ogg" id="10_f0d0i"]
 [ext_resource type="PackedScene" uid="uid://575duwk8wwow" path="res://scenes/playerrb.tscn" id="10_lm0gk"]
 [ext_resource type="PackedScene" uid="uid://6bp3h8a7xwg2" path="res://scenes/hooks.tscn" id="11_v6vk7"]
 [ext_resource type="PackedScene" uid="uid://bd2t10pe6o5ja" path="res://scenes/spikes.tscn" id="14_go0tx"]
@@ -259,6 +260,8 @@ DELAY = 2.0
 [node name="BackgroundMusic" type="Node2D" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="BackgroundMusic"]
+stream = ExtResource("10_f0d0i")
+autoplay = true
 
 [node name="Player" parent="." instance=ExtResource("10_lm0gk")]
 unique_name_in_owner = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d10og4j3rjqte"]
+[gd_scene load_steps=18 format=3 uid="uid://d10og4j3rjqte"]
 
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="1_hhj4t"]
 [ext_resource type="PackedScene" uid="uid://bd3l37avnu1at" path="res://scenes/jelly.tscn" id="2_fiikb"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bjj5myaluho47" path="res://sprites/pipe.png" id="5_rm2mo"]
 [ext_resource type="Texture2D" uid="uid://ckbwehd1arqx" path="res://sprites/bubble.png" id="6_57vu0"]
 [ext_resource type="PackedScene" uid="uid://dvg0crd22tv4v" path="res://scenes/camera.tscn" id="7_ife6o"]
+[ext_resource type="AudioStream" uid="uid://dtkl2vp88sywx" path="res://music/musica.ogg" id="8_627w7"]
 [ext_resource type="PackedScene" uid="uid://575duwk8wwow" path="res://scenes/playerrb.tscn" id="9_k2d4d"]
 [ext_resource type="PackedScene" uid="uid://b5em7oso028vc" path="res://scenes/sponge.tscn" id="10_0dl23"]
 [ext_resource type="PackedScene" uid="uid://b6mayorbuqksf" path="res://scenes/platform.tscn" id="11_4rxj1"]
@@ -85,6 +86,8 @@ position = Vector2(175, 180)
 [node name="BackgroundMusic" type="Node2D" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="BackgroundMusic"]
+stream = ExtResource("8_627w7")
+autoplay = true
 
 [node name="Player" parent="." instance=ExtResource("9_k2d4d")]
 unique_name_in_owner = true

@@ -1,7 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://b5qfmj4kbkyew"]
+[gd_scene load_steps=19 format=3 uid="uid://syxuqlnnhv74"]
 
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="1_82ipf"]
-[ext_resource type="PackedScene" uid="uid://b6mayorbuqksf" path="res://scenes/platform.tscn" id="2_en7tu"]
+[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="2_en7tu"]
 [ext_resource type="PackedScene" uid="uid://dt1aw6txf0sk3" path="res://scenes/surface.tscn" id="3_qu37q"]
 [ext_resource type="Texture2D" uid="uid://ci2i83qulla2u" path="res://sprites/Background 0.3.jpg" id="4_mq8be"]
 [ext_resource type="Texture2D" uid="uid://bjj5myaluho47" path="res://sprites/pipe.png" id="5_p52px"]
@@ -12,11 +12,10 @@
 [ext_resource type="AudioStream" uid="uid://dtkl2vp88sywx" path="res://music/musica.ogg" id="10_f0d0i"]
 [ext_resource type="PackedScene" uid="uid://575duwk8wwow" path="res://scenes/playerrb.tscn" id="10_lm0gk"]
 [ext_resource type="PackedScene" uid="uid://6bp3h8a7xwg2" path="res://scenes/hooks.tscn" id="11_v6vk7"]
-[ext_resource type="PackedScene" uid="uid://bd2t10pe6o5ja" path="res://scenes/spikes.tscn" id="14_go0tx"]
-[ext_resource type="PackedScene" uid="uid://bj5eguiy021kk" path="res://levels/4_level.tscn" id="14_riua2"]
-[ext_resource type="PackedScene" uid="uid://cgtbdkncq2wat" path="res://scenes/pipe_end.tscn" id="15_0dqv1"]
-[ext_resource type="PackedScene" uid="uid://cp42db40rw2sv" path="res://scenes/puffer.tscn" id="15_8ejlx"]
-[ext_resource type="Script" path="res://scripts/puffer.gd" id="16_sk7bl"]
+[ext_resource type="PackedScene" path="res://scenes/spikes.tscn" id="14_go0tx"]
+[ext_resource type="PackedScene" uid="uid://dkjqrwr7x18ga" path="res://levels/4_level.tscn" id="14_riua2"]
+[ext_resource type="PackedScene" path="res://scenes/pipe_end.tscn" id="15_0dqv1"]
+[ext_resource type="PackedScene" path="res://scenes/puffer.tscn" id="15_8ejlx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
 
@@ -271,14 +270,14 @@ position = Vector2(184, 1017)
 remote_path = NodePath("../../../Camera2D")
 
 [node name="Hooks1" parent="." instance=ExtResource("11_v6vk7")]
-position = Vector2(852, -90)
+position = Vector2(748, -90)
 scale = Vector2(0.538387, 0.35535)
 SPEED = 1000.0
 amountToMove = Vector2(0, 200)
 DELAY = 1.0
 
 [node name="Hooks2" parent="." instance=ExtResource("11_v6vk7")]
-position = Vector2(1103, -90)
+position = Vector2(1063, -90)
 scale = Vector2(0.538387, 0.35535)
 SPEED = 1000.0
 amountToMove = Vector2(0, 200)
@@ -293,7 +292,7 @@ amountToMove = Vector2(0, 200)
 DELAY = 1.0
 
 [node name="Hooks4" parent="." instance=ExtResource("11_v6vk7")]
-position = Vector2(1601, -90)
+position = Vector2(1621, -90)
 scale = Vector2(0.538387, 0.35535)
 SPEED = 1000.0
 amountToMove = Vector2(0, 200)
@@ -335,6 +334,5 @@ scene = ExtResource("14_riua2")
 [node name="puffer" parent="." instance=ExtResource("15_8ejlx")]
 position = Vector2(590, 471)
 scale = Vector2(3, 3)
-script = ExtResource("16_sk7bl")
 
 [editable path="Player"]

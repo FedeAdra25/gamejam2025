@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvy6ivrducy63"]
+[gd_scene load_steps=12 format=3 uid="uid://dvy6ivrducy63"]
 
 [ext_resource type="Script" path="res://scripts/current.gd" id="1_hl3qv"]
 [ext_resource type="Texture2D" uid="uid://ckbwehd1arqx" path="res://sprites/bubble.png" id="2_avsej"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d2d24e01eurki" path="res://sprites/bubble_spawn0.png" id="4_ilfwf"]
 [ext_resource type="Texture2D" uid="uid://bjwmvilp1dvmf" path="res://sprites/bubble_spawn1.png" id="5_qxxg8"]
 [ext_resource type="Texture2D" uid="uid://nexptd36sbo1" path="res://sprites/bubble_spawn2.png" id="6_muljv"]
+[ext_resource type="AudioStream" uid="uid://ccs8viiatwaq7" path="res://sfx/bubbles_generator_sfx.ogg" id="7_s2m31"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0r2eg"]
 size = Vector2(98, 769)
@@ -74,6 +75,9 @@ position = Vector2(0, 488)
 scale = Vector2(0.656, 0.656)
 sprite_frames = SubResource("SpriteFrames_ovrl4")
 frame_progress = 0.117231
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BubblesActivator"]
+stream = ExtResource("7_s2m31")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,20 +1,19 @@
-[gd_scene load_steps=18 format=3 uid="uid://cjpbyobmve6kq"]
+[gd_scene load_steps=17 format=3 uid="uid://dh40puy45x2b2"]
 
+[ext_resource type="Script" path="res://levels/1_level.gd" id="1_hv61a"]
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="1_p4huw"]
 [ext_resource type="PackedScene" uid="uid://dt1aw6txf0sk3" path="res://scenes/surface.tscn" id="2_cl5yu"]
 [ext_resource type="Texture2D" uid="uid://ci2i83qulla2u" path="res://sprites/Background 0.3.jpg" id="3_hu38a"]
 [ext_resource type="Texture2D" uid="uid://bjj5myaluho47" path="res://sprites/pipe.png" id="4_muwo2"]
 [ext_resource type="Texture2D" uid="uid://ckbwehd1arqx" path="res://sprites/bubble.png" id="5_qrb7o"]
 [ext_resource type="PackedScene" uid="uid://dvg0crd22tv4v" path="res://scenes/camera.tscn" id="6_j5cec"]
-[ext_resource type="PackedScene" path="res://scenes/bubble_generator.tscn" id="7_0jlnq"]
-[ext_resource type="Script" path="res://scripts/background_music.gd" id="7_dyhai"]
+[ext_resource type="PackedScene" uid="uid://dvy6ivrducy63" path="res://scenes/bubble_generator.tscn" id="7_0jlnq"]
 [ext_resource type="PackedScene" uid="uid://bd3l37avnu1at" path="res://scenes/jelly.tscn" id="8_pdqgo"]
-[ext_resource type="AudioStream" uid="uid://dtkl2vp88sywx" path="res://music/musica.ogg" id="8_rhvii"]
 [ext_resource type="PackedScene" uid="uid://575duwk8wwow" path="res://scenes/playerrb.tscn" id="9_iuuki"]
-[ext_resource type="PackedScene" uid="uid://bd2t10pe6o5ja" path="res://scenes/spikes.tscn" id="11_e7tgb"]
-[ext_resource type="PackedScene" uid="uid://b6mayorbuqksf" path="res://scenes/platform.tscn" id="11_ujc4c"]
-[ext_resource type="PackedScene" uid="uid://cgtbdkncq2wat" path="res://scenes/pipe_end.tscn" id="12_hgee5"]
-[ext_resource type="PackedScene" uid="uid://d10og4j3rjqte" path="res://levels/2_level.tscn" id="13_i8cm7"]
+[ext_resource type="PackedScene" path="res://scenes/spikes.tscn" id="11_e7tgb"]
+[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="11_ujc4c"]
+[ext_resource type="PackedScene" path="res://scenes/pipe_end.tscn" id="12_hgee5"]
+[ext_resource type="PackedScene" uid="uid://dj46oqiu3xm7u" path="res://levels/2_level.tscn" id="13_i8cm7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
 
@@ -30,6 +29,7 @@ scale_max = 0.3
 
 [node name="Level1" type="Node2D"]
 position = Vector2(-6, 0)
+script = ExtResource("1_hv61a")
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("1_p4huw")
@@ -74,13 +74,6 @@ visibility_rect = Rect2(0, 0, 3000, 200)
 
 [node name="Camera2D" parent="." instance=ExtResource("6_j5cec")]
 position = Vector2(204, 162)
-
-[node name="BackgroundMusic" type="Node2D" parent="."]
-script = ExtResource("7_dyhai")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="BackgroundMusic"]
-stream = ExtResource("8_rhvii")
-autoplay = true
 
 [node name="BubbleGenerator" parent="." instance=ExtResource("7_0jlnq")]
 position = Vector2(1182, 583)

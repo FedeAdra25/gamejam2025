@@ -16,6 +16,9 @@ signal deleteado(value)
 
 @onready var playerDiesSfx = $PlayerSfx/PlayerDying
 @onready var playerJumpSfx = $PlayerSfx/PlayerJumping
+@onready var playerMoveSfx = $PlayerSfx/PlayerMoving
+@onready var playerMoveSponge = $PlayerSfx/PlayerSponge
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -50,12 +53,19 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		apply_central_impulse(Vector2(direction * 100,0))
-	pass
+	if linear_velocity.length() < 0.2:
+		playerMoveSfx.stop()
+	elif !playerMoveSfx.playing:
+		playerMoveSfx.play()
+	
 
 
 func die() -> void:
 	deathflag = true
 	emit_signal("deleteado", true)
+	playerJumpSfx.stop()
+	playerMoveSfx.stop()
+	playerMoveSponge.stop()
 	playerDiesSfx.play()
 	
 func current() -> void:
@@ -64,6 +74,7 @@ func current() -> void:
 func sponge_jump(sponge_position:Vector2) -> void:
 	var direccionDeSalto = Vector2((sponge_position.x - global_position.x) * -1, (sponge_position.y - global_position.y) * -1)
 	apply_central_impulse(direccionDeSalto * FUERZA_ESPONJA)
+	playerMoveSponge.play(0.23)
 
 func spring(obj_pos) -> void:
 	var direccionDeSalto = Vector2((obj_pos.x - global_position.x) * -1, (obj_pos.y - global_position.y) * -1)

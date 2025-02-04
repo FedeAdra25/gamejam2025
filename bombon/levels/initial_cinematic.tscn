@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bfcabh3ahqewy"]
+[gd_scene load_steps=8 format=3 uid="uid://bammlbv78l1h8"]
 
 [ext_resource type="Script" path="res://scripts/cinematic_animation.gd" id="1_30nug"]
 [ext_resource type="Texture2D" uid="uid://bjrub7u0hma2l" path="res://sprites/cinematica1.jpg" id="1_kt0uc"]
@@ -27,7 +27,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 4.0
+"speed": 2.0
 }]
 
 [node name="InitialCinematic" type="Node2D"]
@@ -38,8 +38,13 @@ script = ExtResource("6_wqwha")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_i6qi2")
-frame = 4
-frame_progress = 1.0
 centered = false
 
+[node name="SfxPlayer" type="AudioStreamPlayer2D" parent="."]
+volume_db = 10.0
+max_polyphony = 3
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="sprite_frames_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_sprite_frames_changed"]
+[connection signal="finished" from="SfxPlayer" to="." method="_on_sfx_player_finished"]

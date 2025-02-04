@@ -1,10 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://575duwk8wwow"]
+[gd_scene load_steps=24 format=3 uid="uid://575duwk8wwow"]
 
 [ext_resource type="Script" path="res://scripts/player_phisics.gd" id="1_fp43i"]
 [ext_resource type="AudioStream" uid="uid://df6cfmdsdgeht" path="res://sfx/Burbuja Explotando 3.ogg" id="2_802le"]
 [ext_resource type="Script" path="res://scripts/sprite_follow_player.gd" id="3_0ttpv"]
 [ext_resource type="AudioStream" uid="uid://dxlr2o0ic2vlg" path="res://sfx/Burbuja Salto 2.ogg" id="3_6n3w5"]
 [ext_resource type="Texture2D" uid="uid://o5p2vi1u1ekb" path="res://sprites/hamster_animation_spritesheet.png" id="4_bluwc"]
+[ext_resource type="AudioStream" uid="uid://ci3uiopxql5os" path="res://sfx/hamster_moving_sfx.ogg" id="4_iy04n"]
+[ext_resource type="AudioStream" uid="uid://de1j4uw3p2m2y" path="res://sfx/bubble_bounce_sfx.ogg" id="5_s1jbw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m7yw4"]
 radius = 60.0333
@@ -157,12 +159,18 @@ stream = ExtResource("3_6n3w5")
 volume_db = 10.0
 max_polyphony = 3
 
+[node name="PlayerMoving" type="AudioStreamPlayer" parent="PlayerPhysics/PlayerSfx"]
+stream = ExtResource("4_iy04n")
+
+[node name="PlayerSponge" type="AudioStreamPlayer" parent="PlayerPhysics/PlayerSfx"]
+stream = ExtResource("5_s1jbw")
+
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerPhysics"]
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.339608, 0.339608)
 sprite_frames = SubResource("SpriteFrames_m4nii")
-animation = &"die"
+animation = &"walk"
 script = ExtResource("3_0ttpv")
 
 [connection signal="body_exited" from="PlayerPhysics" to="PlayerPhysics" method="_on_body_exited"]

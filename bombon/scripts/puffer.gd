@@ -13,7 +13,6 @@ func _ready() -> void:
 	sprite.play("default")
 	
 func _on_body_entered(body: Node2D) -> void:
-	#print(body)
 	if(body.has_method("spring") && CANTIDAD_DE_VECES_QUE_CORRIO_COLLIDED == 0):
 		body.spring(global_position)
 		CANTIDAD_DE_VECES_QUE_CORRIO_COLLIDED = CANTIDAD_DE_VECES_QUE_CORRIO_COLLIDED + 1

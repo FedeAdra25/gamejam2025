@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bj5eguiy021kk"]
+[gd_scene load_steps=18 format=3 uid="uid://dkjqrwr7x18ga"]
 
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="1_8ckk1"]
 [ext_resource type="PackedScene" uid="uid://bd3l37avnu1at" path="res://scenes/jelly.tscn" id="2_1f2ly"]
@@ -11,10 +11,10 @@
 [ext_resource type="AudioStream" uid="uid://dtkl2vp88sywx" path="res://music/musica.ogg" id="8_n442p"]
 [ext_resource type="PackedScene" uid="uid://b5em7oso028vc" path="res://scenes/sponge.tscn" id="9_aglyd"]
 [ext_resource type="PackedScene" uid="uid://cmdbh32ttv8vx" path="res://scenes/shark.tscn" id="10_8kx6g"]
-[ext_resource type="PackedScene" uid="uid://b6mayorbuqksf" path="res://scenes/platform.tscn" id="10_s0w3q"]
-[ext_resource type="PackedScene" uid="uid://csmyjr05qm6ei" path="res://levels/win_screen.tscn" id="12_dkihl"]
-[ext_resource type="PackedScene" uid="uid://cp42db40rw2sv" path="res://scenes/puffer.tscn" id="12_e2so3"]
-[ext_resource type="PackedScene" uid="uid://cgtbdkncq2wat" path="res://scenes/pipe_end.tscn" id="13_6e5qq"]
+[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="10_s0w3q"]
+[ext_resource type="PackedScene" path="res://levels/win_screen.tscn" id="12_dkihl"]
+[ext_resource type="PackedScene" path="res://scenes/puffer.tscn" id="12_e2so3"]
+[ext_resource type="PackedScene" path="res://scenes/pipe_end.tscn" id="13_6e5qq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
 
@@ -118,15 +118,13 @@ scale = Vector2(0.506848, 0.369422)
 position = Vector2(451, 1040)
 scale = Vector2(0.506848, 0.369422)
 
-[node name="puffer" parent="." instance=ExtResource("12_e2so3")]
-position = Vector2(1749, 730)
-scale = Vector2(2.5, 2.5)
-script = null
+[node name="puffer3" parent="." instance=ExtResource("12_e2so3")]
+position = Vector2(867, 726)
+scale = Vector2(2.50107, 2.50107)
 
-[node name="puffer2" parent="." instance=ExtResource("12_e2so3")]
-position = Vector2(869, 730)
-scale = Vector2(2.5, 2.5)
-script = null
+[node name="puffer4" parent="." instance=ExtResource("12_e2so3")]
+position = Vector2(1750, 730)
+scale = Vector2(2.52686, 2.52686)
 
 [node name="FinishLine" parent="." instance=ExtResource("13_6e5qq")]
 position = Vector2(73, 173)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="2_pcpng"]
 [ext_resource type="PackedScene" uid="uid://575duwk8wwow" path="res://scenes/playerrb.tscn" id="4_vcoof"]
-[ext_resource type="PackedScene" path="res://scenes/bubble_generator.tscn" id="5_kqkir"]
+[ext_resource type="PackedScene" uid="uid://dvy6ivrducy63" path="res://scenes/bubble_generator.tscn" id="5_kqkir"]
 [ext_resource type="PackedScene" uid="uid://bd3l37avnu1at" path="res://scenes/jelly.tscn" id="6_r4e8e"]
 [ext_resource type="PackedScene" uid="uid://dt1aw6txf0sk3" path="res://scenes/surface.tscn" id="7_4i4m0"]
 [ext_resource type="Texture2D" uid="uid://ci2i83qulla2u" path="res://sprites/Background 0.3.jpg" id="8_40cbw"]
@@ -13,10 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://cmdbh32ttv8vx" path="res://scenes/shark.tscn" id="11_8yxr3"]
 [ext_resource type="PackedScene" uid="uid://6bp3h8a7xwg2" path="res://scenes/hooks.tscn" id="12_prfvy"]
 [ext_resource type="AudioStream" uid="uid://dko47xf7cgml2" path="res://sfx/Sonido de Muerte.ogg" id="13_ewi50"]
-[ext_resource type="PackedScene" uid="uid://bd2t10pe6o5ja" path="res://scenes/spikes.tscn" id="13_qrmwc"]
-[ext_resource type="PackedScene" uid="uid://b6mayorbuqksf" path="res://scenes/platform.tscn" id="13_yaf3g"]
-[ext_resource type="PackedScene" uid="uid://cgtbdkncq2wat" path="res://scenes/pipe_end.tscn" id="14_c1ubq"]
-[ext_resource type="PackedScene" uid="uid://cjpbyobmve6kq" path="res://1_level.tscn" id="15_t5lyc"]
+[ext_resource type="PackedScene" path="res://scenes/spikes.tscn" id="13_qrmwc"]
+[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="13_yaf3g"]
+[ext_resource type="PackedScene" path="res://scenes/pipe_end.tscn" id="14_c1ubq"]
+[ext_resource type="PackedScene" path="res://1_level.tscn" id="15_t5lyc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
 
@@ -120,7 +120,5 @@ position = Vector2(1795, 937)
 position = Vector2(2318, 952)
 scale = Vector2(0.838347, 0.838347)
 scene = ExtResource("15_t5lyc")
-
-[connection signal="deleteado" from="Player/PlayerPhysics" to="Player/Sprite2D" method="_on_player_physics_deleteado"]
 
 [editable path="Player"]

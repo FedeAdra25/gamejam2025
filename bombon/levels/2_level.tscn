@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://d10og4j3rjqte"]
+[gd_scene load_steps=19 format=3 uid="uid://dj46oqiu3xm7u"]
 
+[ext_resource type="Script" path="res://levels/2_level.gd" id="1_47cym"]
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="1_hhj4t"]
 [ext_resource type="PackedScene" uid="uid://bd3l37avnu1at" path="res://scenes/jelly.tscn" id="2_fiikb"]
 [ext_resource type="PackedScene" uid="uid://dt1aw6txf0sk3" path="res://scenes/surface.tscn" id="3_f5646"]
@@ -10,11 +11,11 @@
 [ext_resource type="AudioStream" uid="uid://dtkl2vp88sywx" path="res://music/musica.ogg" id="8_627w7"]
 [ext_resource type="PackedScene" uid="uid://575duwk8wwow" path="res://scenes/playerrb.tscn" id="9_k2d4d"]
 [ext_resource type="PackedScene" uid="uid://b5em7oso028vc" path="res://scenes/sponge.tscn" id="10_0dl23"]
-[ext_resource type="PackedScene" uid="uid://b6mayorbuqksf" path="res://scenes/platform.tscn" id="11_4rxj1"]
-[ext_resource type="PackedScene" uid="uid://cp42db40rw2sv" path="res://scenes/puffer.tscn" id="12_ce81h"]
-[ext_resource type="PackedScene" uid="uid://bd2t10pe6o5ja" path="res://scenes/spikes.tscn" id="12_p5ua8"]
-[ext_resource type="PackedScene" uid="uid://cgtbdkncq2wat" path="res://scenes/pipe_end.tscn" id="13_shash"]
-[ext_resource type="PackedScene" uid="uid://b5qfmj4kbkyew" path="res://levels/3_level.tscn" id="14_1hhty"]
+[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="11_4rxj1"]
+[ext_resource type="PackedScene" path="res://scenes/puffer.tscn" id="12_ce81h"]
+[ext_resource type="PackedScene" path="res://scenes/spikes.tscn" id="12_p5ua8"]
+[ext_resource type="PackedScene" path="res://scenes/pipe_end.tscn" id="13_shash"]
+[ext_resource type="PackedScene" path="res://levels/3_level.tscn" id="14_1hhty"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ryr"]
 
@@ -30,6 +31,7 @@ scale_max = 0.3
 
 [node name="Level1" type="Node2D"]
 position = Vector2(-6, 0)
+script = ExtResource("1_47cym")
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("1_hhj4t")

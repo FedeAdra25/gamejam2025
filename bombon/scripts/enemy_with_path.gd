@@ -8,12 +8,14 @@ extends Area2D
 
 @onready var initialPosition = global_position
 
+var moving_towards = false
 var desiredPosition: Vector2
-var swap_delay
+var swap_delay = 0
 
 func _ready() -> void:
 	desiredPosition = initialPosition + amountToMove
 	swap_delay = DELAY
+	moving_towards = true
 	#print("done that")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -32,6 +34,7 @@ func _process(delta: float) -> void:
 			var aux = desiredPosition
 			desiredPosition = initialPosition
 			initialPosition = aux
+			moving_towards = !moving_towards
 
 func _on_body_entered(body: Node2D) -> void:
 	if(body.has_method("die")):

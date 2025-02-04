@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://c06fu6nuuvn3d"]
+[gd_scene load_steps=6 format=3 uid="uid://cw5p70unxfo7q"]
 
+[ext_resource type="Script" path="res://levels/title_screen.gd" id="1_qmhv0"]
 [ext_resource type="Script" path="res://scripts/exit_script.gd" id="1_u6g1i"]
 [ext_resource type="Texture2D" uid="uid://c6rfmh8dl5pep" path="res://sprites/title_background.jpg" id="2_oxyha"]
 [ext_resource type="Script" path="res://scripts/button_play.gd" id="3_gjsm6"]
 [ext_resource type="Script" path="res://scripts/button_credits.gd" id="4_n2845"]
-[ext_resource type="AudioStream" uid="uid://bhv1dwlbg8d20" path="res://music/menu.ogg" id="5_dg006"]
 
 [node name="TitleScreen" type="Node2D"]
+script = ExtResource("1_qmhv0")
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("1_u6g1i")
@@ -31,11 +32,6 @@ offset_right = 1322.0
 offset_bottom = 889.0
 flat = true
 script = ExtResource("4_n2845")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_dg006")
-volume_db = 20.0
-autoplay = true
 
 [connection signal="pressed" from="TitleBackground/button play" to="TitleBackground/button play" method="_on_pressed"]
 [connection signal="pressed" from="TitleBackground/button credits" to="TitleBackground/button credits" method="_on_pressed"]

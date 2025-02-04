@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmdbh32ttv8vx"]
+[gd_scene load_steps=7 format=3 uid="uid://cmdbh32ttv8vx"]
 
 [ext_resource type="Script" path="res://scripts/shark.gd" id="1_1nkbq"]
 [ext_resource type="Texture2D" uid="uid://cdx7gl0o775rb" path="res://sprites/shark.png" id="1_lcsrn"]
+[ext_resource type="AudioStream" uid="uid://dqj6l5ic361s3" path="res://sfx/shark_ambient_sfx.ogg" id="3_x3vjh"]
+[ext_resource type="AudioStream" uid="uid://bs4261qjasbgi" path="res://sfx/shark_sfx.ogg" id="4_v6y4b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uxp4a"]
 radius = 130.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hbvva"]
+streams_count = 2
+stream_0/stream = ExtResource("3_x3vjh")
+stream_1/stream = ExtResource("4_v6y4b")
 
 [node name="Shark" type="Area2D"]
 script = ExtResource("1_1nkbq")
@@ -17,5 +24,8 @@ shape = SubResource("CircleShape2D_uxp4a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_lcsrn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_hbvva")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

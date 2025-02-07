@@ -78,6 +78,7 @@ frame_progress = 0.117231
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BubblesActivator"]
 stream = ExtResource("7_s2m31")
+volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

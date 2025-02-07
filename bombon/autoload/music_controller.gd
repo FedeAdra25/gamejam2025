@@ -20,6 +20,7 @@ func play_cinematic():
 func play_level(number):
 	if music_node.stream == cinematic_music:
 		music_node.stop()
+		music_node.volume_db = 10
 	var playback_position = music_node.get_playback_position()
 	music_node.stream = level_music[number]
 	music_node.play(playback_position)

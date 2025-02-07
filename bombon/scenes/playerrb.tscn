@@ -161,6 +161,7 @@ max_polyphony = 3
 
 [node name="PlayerMoving" type="AudioStreamPlayer" parent="PlayerPhysics/PlayerSfx"]
 stream = ExtResource("4_iy04n")
+volume_db = -25.0
 
 [node name="PlayerSponge" type="AudioStreamPlayer" parent="PlayerPhysics/PlayerSfx"]
 stream = ExtResource("5_s1jbw")
